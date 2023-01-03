@@ -4,223 +4,374 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RE-vue</title>
+    <title>Document</title>
     <style>
         *{
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
-        #app {
+        body {
+            margin: 0;
+            padding: 0;    
+        }
+        .background {
             width: 100%;
             height: 100vh;
-            background-color: antiquewhite;
+            background-color: #f06060;
+            
         }
-        .nav{
-            width: 300px;
-            height: 150px;
-            font-size: 20px;
-            border: 1px solid black;
-            margin-bottom: 30px;
-            background-color: gray;
-        }
-
-        .container{
+        .game-board {
+            width: 510px;
+            height: 510px;
+            background-color: #ddd;
+            border-radius: 10px;
+            padding: 10px;
             display: flex;
             flex-wrap: wrap;
+            gap: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+
         }
-        .card{
-            width: 200px;
-            height: 350px;
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;         
-            border: 1px solid black; 
+
+        .box {
+            width: 240px;
+            height: 240px;
+            background-color: aqua;
+            border-radius: 15px;
+            
+            /* border: 5px solid #ddd; */
+            
+            
         }
-        img {
-            width: 180px;
-        }
-        .male {
+        .answer {
             background-color: aquamarine;
         }
-        .female {
-            background-color: pink;
+        .boxer {
+            font-size: 30px;
+            font-weight: bold;
+            width: 180px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: #ddd;
+            border-radius: 20px;
+            position: absolute;
+            top: 40%;
+            left: 5%;
         }
 
+        .time {
+            font-size: 30px;
+            font-weight: bold;
+            width: 180px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: #ddd;
+            border-radius: 20px;
+            position: absolute;
+            top: 30%;
+            left: 5%;
+        }
+        .replay {
+            font-size: 30px;
+            font-weight: bold;
+            width: 180px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: #ddd;
+            border-radius: 20px;
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            display: none;
+        }
+        .block{
+            display: block;
+            cursor: pointer;
+        }
+        .none {
+            display: none;
+        }
+        button {
+            font-size: 30px;
+            font-weight: bold;
+            width: 180px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: #ddd;
+            border-radius: 20px;
+            position: absolute;
+            top: 10%;
+            left: 45%;
+            cursor: pointer;
+        }
     </style>
+
 </head>
-<body> 
-    <div id="app">
-        {{ data }}
-        <div class="add nav">
-            <!-- 用v-model 跟 newData裡面的資料做連結 -->
-            <div class="name">
-                <label for="add-name">姓名: </label>
-                <input v-model="newData.name" id="add-name" type="text">
-            </div>
-            <div class="age">
-                <label for="add-age">年齡: </label>
-                <input v-model="newData.age" id="add-age" type="number">
-            </div>
-            <div class="gender">
-                <label for="add-name">性別: </label>
-                <select v-model="newData.gender" id="add-name">
-                    <option value="male">乾道</option>
-                    <option value="female">坤道</option>
-                </select>
-            </div>
-            <div class="power">
-                <label for="add-power">戰力: </label>
-                <input v-model="newData.power" id="add-power" type="number">
-            </div>
-            <button type="button" @click="addItem()">新增資料</button>
-
+<body>
+    <div class="background">
+        <div class="game-board">
+            <div class="box"></div>
+            <div class="box answer"></div>
+            <div class="box"></div>
+            <div class="box"></div>
         </div>
-        <div class="container">
-            <!-- v-blind:class 綁定 item.gender 根據性別添加新的class -->
-            <div v-for="(item,index) in data" :key="item.id"
-            class="card" v-bind:class="{ 'male': item.gender === 'male', 'female': item.gender === 'female'}">
-                <div class="rank">第{{ index + 1 }}名</div>
-                <div class="id">序號: {{ item.id }}</div>
-                <div class="name">姓名:{{ item.name }}</div>
-                <div class="age">年齡:{{ item.age }}</div>
-                <div class="gender">性別:{{ genderChange(item.gender) }}</div>
-                <div class="power">能力值:{{ item.power}}</div>
-
-
-
-                
-                <!-- 最簡單的做法，點擊一次增加戰力 1000 -->
-                <!-- <button @click="item.power += 1000" type="button">增加戰力</button> -->
-
-
-                <!-- 用函數的方式做點擊事件 -->
-                <!-- <button @click="addPower(item)" type="button">增加戰力</button> -->
-
-
-                <!-- Vue 判斷 v-if -->
-                <img v-if="item.power >= 50000" 
-                :src="image.fiveStep" alt="">
-                <img v-else-if="item.power >= 10000" 
-                :src="image.fourStep" alt="">
-                <img v-else-if="item.power >= 1000" 
-                :src="image.thirdStep" alt="">
-                <img v-else-if="item.power >= 100" 
-                :src="image.secondStep" alt="">
-                <img v-else :src="image.firstStep" alt="">
-            </div>
-        </div>
-        
+        <div class="boxer"></div>
+        <div class="time">時間:60</div>
+        <div class="replay">重新開始</div>
+        <button class="pause">暫停計時</button>
+        <button class="start none">重新計時</button>
     </div>
-
     
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-        Vue.createApp({
-            data() {
-                return {
-                    newData: {
-                        name: '',
-                        age: '',
-                        gender: 'male',
-                        power: '',
-                    },
-                    data: [
-                        {   
-                            id: 1,
-                            name: '曉華',
-                            age: 28,
-                            gender: 'female',
-                            power: 50,
-                        },
-                        {   
-                            id: 2,
-                            name: '柔宣',
-                            age: 29,
-                            gender: 'female',
-                            power: 5000,
-                        },
-                        {
-                            id: 3,
-                            name: '龍天君',
-                            age: 30,
-                            gender: 'male',
-                            power: 10000,
-                        },
-                        {
-                            id: 4,
-                            name: '天琉璃',
-                            age: 20000,
-                            gender: 'female',
-                            power: 60000,
-                        },
-                    ],
-                    image:{
-                        firstStep: './img/練體.jpg',
-                        secondStep: './img/練氣.jpg',
-                        thirdStep: './img/築基.jpg',
-                        fourStep: './img/金丹.jpg',
-                        fiveStep: './img/元嬰.jpg'
-                    }
-                }
-                console.log()
-            },
-            // 監視data內的變數變化
-            watch: {
-                // data() 內的 data
-                data: {
-                    // 發生變化的時候要做什麼事
-                    handler: function(){
-                        // 要做的事
-                        this.data.sort((a, b) => {
-                            return b.power - a.power
-                        })
-                    },
-                    // 有所變化才會觸發
-                    immediate: true,
-                    // 可以監視到物件內更深層的值
-                    deep: true,
-                },
-            },
-            // 存放function
-            methods: {
-                genderChange(gender){
-                    if(gender === 'male'){
-                        return '乾道';
-                    }else{
-                        return '坤道';
-                    }
-                },
-                addPower(item){
-                    item.power += 1000;
-                },
-                addItem(){
+        // 誰 什麼時候 要做什麼事
+        
 
-                    // 確認欄位有無填寫
-                    // 原本newData.name = '' 為空值，代表null,false，所以用!newData翻轉為true，因次if裡面為當我沒有輸入內容時，會出現....
-                    if(!this.newData.name || !this.newData.age || !this.newData.gender || !this.newData.power){
-                        // 沒有填寫的時候會跳出來
-                        alert('請輸入完整內容')
+        const board = document.querySelector('.game-board')
+        const grade = document.querySelector('.boxer')
+        const timer = document.querySelector('.time')
+        const replayBtn = document.querySelector('.replay')
+
+        // 計時按鈕
+        const pauseBtn = document.querySelector('.pause')
+        const startBtn = document.querySelector('.start')
+
+
+
+
+
+        let score = 0
+        let count = 0
+
+        let number = 60;
+        // 宣告 時間遞減 變數 可以先不賦值
+        let timeReduce;
+
+        // 設一個 function timeR()
+        function timeR(){
+            
+            // timeReduce 賦值
+            timeReduce = setInterval(function(){
+            if(number > 0){
+                number --;    
+            }else {
+                clearInterval(timeReduce);
+                alert(`恭喜你結束遊戲，獲得${score}分 ${location.reload()}`)
+                replayBtn.classList.add('block'); 
+            } 
+            timer.innerHTML = `時間:${number}`        
+            },1000)
+
+            
+            // return 回傳資料
+            // function (參數)  可以有參數 也可以 沒有參數
+            // 舉例
+            // return 'ture';
+            // 在外面做console.log(timeR())
+            // 會顯示出 ture
+          
+        };
+
+        timeR();
+        
+       
+        
+        replayBtn.addEventListener('click',()=>{
+            // 重置網頁
+            location.reload();
+        })
+            // 暫停計時
+        pauseBtn.addEventListener('click',function(){
+            pauseBtn.classList.add('none')
+            startBtn.classList.remove('none')
+            clearInterval(timeReduce);
+        })
+        startBtn.addEventListener('click',function(){
+            pauseBtn.classList.remove('none')
+            startBtn.classList.add('none')
+            // 繼續運用 function timeR;
+            timeR();
+        })    
+        
+        
+        // 代辦清單，但是不會執行，setBoard(level)，給一個變數level來定義裡面的level是什麼
+        function setBoard(level){
+            // 宣告一個變數boxes 鎖定所有的box
+            console.log('12')
+
+            let boxes = document.querySelectorAll('.box'); 
+
+            boxes.forEach(function(box){
+                grade.innerHTML = `你的分數:${score}`
+                
+                // 每個box都綁上點擊事件
+                box.addEventListener('click',function(){
+                // 假設box裡面有包含正解
+                
+                if(box.classList.contains('answer')){ 
+                        
+                         score = score + 1;
+                         count += 1;
+                         grade.innerHTML = `你的分數:${score}`    
+
+                        // 取隨機數，整數floor為整數值
+                        let random = Math.floor(Math.random()*(level+1)*(level+1));
+                        
+
+                        let r = Math.floor(Math.random()*255)
+                        let g = Math.floor(Math.random()*255)
+                        let b = Math.floor(Math.random()*255)
+
+                        // 490是 510減去padding值(各10) -10(Gap)
+                        let sideLength = (490 - 10*level)/(level+1)
+
+                        // 初始化
+                        board.innerHTML = '';
+
+                        for(i = 0; i < (level+1)*(level+1); i++){
+
+
+                            //  += 給予賦值，去填滿方塊具體數量依照(leve1+1)*(level+1)
+
+
+                            if (i == random){
+
+                                board.innerHTML += `<div class="box answer" style="background-color: rgba(${r},${g},${b},0.7); width: ${sideLength}px;height: ${sideLength}px;
+                                "></div>`
+                                console.log(board);
+
+                            }else {
+                                board.innerHTML += `<div class="box" style="background-color: rgba(${r},${g},${b},1); width: ${sideLength}px;height: ${sideLength}px;
+                                "></div>`
+                            }
+                        }
+                        //  setBoard(level+1);
+                        // 遞迴函數 重新執行一次，包含在box.addEventListener事件裡面 
+                        console.log(`你的分數:${score}`);
+                        console.log(`餘數:${score%2}`);
+
+                        
+                        // 每兩分進位且level不超過8
+                        console.log(count);
+                        if (count%2 == 0  && level < 8){
+                            setBoard(level+1);
+                            
+                        }
+                        else  {
+                            setBoard(level); 
+                        } 
                     }
                     else {
-                        this.newData.id = this.data.length + 1;
-                        // 使用this去撈取到data的資料
-                        // 並再次使用this撈到newData
-                        this.data.push(this.newData)
-                        this.newData = {
-                            name: '',
-                            age: '',
-                            gender: 'male',
-                            power: '',
+                        count = 0;   
+                        if(score > 0){
+                            score = score - 1
+                            grade.innerHTML = `你的分數:${score}` 
                         }
                     }
-                }  
-            },
-        }).mount('#app')
-        
+                })
+            }) 
+        }
+        // 使代辦清單執行，第一次執行
+        setBoard(1); 
+      
+         
+
+
 
         
+        
+
+
+
+
+
+
+
+
+        
+        // function getrandom(max){
+        //     return Math.floor(Math.random() * max)
+        // }
+        
+
+        // let contentArray = ['N','N','N','N']
+        // let random = getrandom(4)
+        
+        // let r = getrandom(255)
+        // let g = getrandom(255)
+        // let b = getrandom(255)
+
+        // contentArray[random] = 'Y';
+
+
+
+        // boxes.forEach(function(box,index){
+        //     box.addEventListener('click',function(){
+        //         ans.textContent = contentArray[index];
+                    
+        //         if(index == random){
+        //             random = getrandom(4);
+        //             r = getrandom(255)
+        //             g = getrandom(255)
+        //             b = getrandom(255)
+                
+        //             boxes.forEach(function(box,index){
+        //                 if( index == random){
+        //                 // box.classList.add('boxer')
+        //                 box.style.backgroundColor = ('rgb('+parseInt(r+20)+','+parseInt(g+20)+','+parseInt(b+20)+')');
+    
+                           
+        //                 }else if(index != random){
+        //                 // box.classList.remove('boxer')
+        //                 box.style.backgroundColor = ('rgb('+r+','+g+','+b+')');
+        //                 }
+        //                 boxes.forEach(function(box,index){
+        //                 })   
+        //             })       
+        //         }
+        //     })
+        //     if(index == random){
+        //         box.style.backgroundColor = `rgb(${r+50},${g+50},${b+50})`;
+        //      }else if(index != random){
+        //         box.style.backgroundColor = `rgb(${r},${g},${b})`;
+        //      } 
+
+        // })
+        
+  
+
+        
+        
+        
+        
+
+
+      
+    
+
+
+
+
+
+
+
+        // for(i = 0; i < box.length; i++){
+        //     console.log(i);
+        //     box[i].addEventListener('click',function(){
+            
+        // });
+        // }
+        
+
+
     </script>
 
 </body>
-</html>
+</html> 
+
+
