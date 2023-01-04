@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        background-color: rgb(211, 201, 188);
+        padding-bottom: 50px;
+    }
+    .big-box{
+        margin: 0 100px;
+    }
+    .font{
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+    .logo{
+        padding: 20px 0 0 0;
+        text-align: center;
+    }
+    .logo img{
+        width: 20%;
+    }
+    .title-board{
+        display: block;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        margin: 0 0 50px 0;
+    }
+    .height{
+        display: flex;
+        justify-content: center;
+        margin: 10px 0 10px 0;
+        line-height: 30px;
+    }
+    .weight{
+        display: flex;
+        justify-content: center;
+        margin: 0 0 15px 0;
+        line-height: 30px;
+    }
+    .btn{
+        width: 50px;
+        height: 30px;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin: 0 0 0 10px;
+        line-height: 28px;
+    }
+    #height{
+        width: 80px;
+        margin: 0 10px;
+    }
+    #weight{
+        width: 80px;
+        margin: 0 15px 0 10px;
+    }
+    .text{
+        display: block;
+        margin-bottom: 5px;
+    }
+    .text-board{
+        display: block;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        margin: 0 0 15px 0;
+    }
+    .btn-board{
+        display: flex;
+        justify-content: center;
+        margin: 0 0 25px 0;
+    }
+    .bmi-board{
+        display: flex;
+        justify-content: center;
+    }
+    #your-bmi{
+        width: 120px;
+        height: 30px;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 6px;
+        margin: 0 0 0 10px;
+        line-height: 30px;
+    }
+    .your-bmi{
+        line-height: 30px;
+    }
+    .result-board{
+        display: block flex;
+        
+    }
+    .bgc{
+        width: 100%;
+        height: 150px;
+        background-color: white;
+        border-radius: 10px;
+        padding: 8px 20px;
+        
+    }
+    .level{
+        height: 80px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+    .suggest{
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 30px;
+    }
+    
+
+</style>
+<body>
+    <div class="container">
+        <div class="big-box">
+            <div class="logo"><img src="./img/logo_g.svg" alt=""></div>
+            <div class="title-board">
+                <h2 class="font">BMI值計算</h2>
+                <span class="text font">BMI值計算公式：BMI=體重(公斤)/身高(公尺)</span>
+                <span class="text font">例如：一個52公斤的人，身高是155公分，則BMI為：</span>
+                <span class="text font">52(公斤)/1.55(公尺)=21.6</span>
+                <span class="text font">體重正常範圍為 BMI=18.5～24</span>
+            </div>
+            <div class="text-board">
+                <span class="text font">快看看自己的BMI是否在理想範圍吧！</span>
+                <div class="height font">身高
+                    <input id="height" class="font" type="text">cm
+                </div>
+                <div class="weight font">體重
+                    <input id="weight" class="font" type="text">kg
+                </div>
+                <div class="btn-board">
+                    <div class="btn submit font">計算</div>
+                    <div class="btn clear font">清除</div>
+                </div>
+                <div class="bmi-board">
+                    <span class="your-bmi font">你的BMI為</span>
+                    <div id="your-bmi"></div>
+                </div>
+            </div>
+            <div class="result-board">
+                <span class="text font">結果</span>
+                <div class="bgc level font">標準</div>
+                <span class="text font">建議</span>
+                <div class="bgc suggest font">繼續維持</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const height = document.querySelector('#height');
+        const weight = document.querySelector('#weight');
+        const submit = document.querySelector('.submit');
+        const clear = document.querySelector('.clear')
+
+        const bmi = document.querySelector('#your-bmi');
+        const level = document.querySelector('.level');
+        const suggest = document.querySelector('.suggest');
+        
+        submit.addEventListener('click',function(){
+            let cm = height.value;
+            let kg = weight.value;
+
+            bmi.textContent = Number(kg / (( cm / 100 ) * ( cm / 100 ))).toFixed(2);
+
+            // cm == '' || kg == ''
+            if(isNaN(parseInt(cm)) || isNaN(kg) ){
+                bmi.textContent = '無法計算';
+                level.textContent = '請輸入正確數值';
+                suggest.textContent = '請輸入正確數值';
+            }else if( cm <= 0 || kg <= 0){
+                bmi.textContent = '不可能';
+                level.textContent = '不可能';
+                suggest.textContent = '不可能';
+            }else if( kg > 800){
+                bmi.textContent = 'cool';
+                level.textContent = 'cool';
+                suggest.textContent = 'cool';            
+            }else if( bmi.textContent <= 18.5){
+                level.textContent = '過輕'
+                suggest.textContent = '請注意，體重過輕的成人，容易出現下面的健康問題：營養不良、骨質疏鬆、掉頭髮、注意力減退、月經失調、生長遲緩、貧血、飲食障礙（暴食症、厭食症）、猝死 '
+            }else if(bmi.textContent <= 24){
+                level.textContent ='標準'
+                suggest.textContent = '繼續維持'
+            }else if( bmi.textContent <= 27 ){
+                level.textContent = '過重'
+                suggest.textContent = '請開始規劃運動'
+            }else if( bmi.textContent <= 30){
+                level.textContent = '輕度肥胖'
+                suggest.textContent = '每星期應運動至少三天'
+            }else if( bmi.textContent <= 35){
+                level.textContent = '中度肥胖'
+                suggest.textContent = '長期運動並配合飲食計畫'
+            }else if( bmi.textContent >= 35){
+                level.textContent = '重度肥胖'
+                suggest.textContent = '嚴重影響健康'
+            }
+        })
+        
+        clear.addEventListener('click',function(){
+            height.value = ''
+            weight.value = ''
+            bmi.textContent = ''
+            level.textContent = ''
+            suggest.textContent = ''
+        })
+
+
+    </script>
+</body>
+</html>
