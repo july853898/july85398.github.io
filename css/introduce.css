@@ -45,6 +45,9 @@ nav .text a:hover {
   transition: 0.5s;
   background-color: goldenrod;
 }
+nav .text a:focus {
+  border: 1px solid black;
+}
 @media (max-width: 1000px) {
   nav .text {
     font-size: 20px;
@@ -53,16 +56,22 @@ nav .text a:hover {
 
 main .introduce {
   width: 100%;
+  height: 50vh;
   display: flex;
 }
 main .introduce .text-sec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 60%;
   height: 100%;
-  background-color: bisque;
   border: 1px solid black;
 }
 main .introduce .text-sec .text {
+  font-size: 1rem;
   padding: 0px 30px;
+  overflow: auto;
   text-align: justify;
   letter-spacing: 5px;
 }

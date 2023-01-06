@@ -39,23 +39,34 @@ nav {
                 transition: .5s;
                 background-color: goldenrod;
             }
+            &:focus {
+                border: 1px solid black;
+            }
         }
+        
         @media (max-width: 1000px) {
             font-size: 20px;
         }
+
     }
 }
 main {
     .introduce{
         width: 100%;
+        height: 50vh;
         display: flex;
         .text-sec {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             width: 60%;
             height: 100%;
-            background-color: bisque;
             border: 1px solid black;
             .text {
+                font-size: 1rem;
                 padding: 0px 30px;
+                overflow: auto;
                 text-align: justify;
                 letter-spacing: 5px;
             }
