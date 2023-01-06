@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.padding {
+  padding: 0px 100px;
+}
+
+.none {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+nav {
+  width: 100%;
+  height: 50px;
+  gap: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+nav .bgc {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(75, 114, 75);
+  position: absolute;
+}
+nav .text {
+  font-size: 24px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  height: 100%;
+}
+nav .text a {
+  color: rgb(238, 238, 238);
+  text-decoration: none;
+}
+nav .text a:hover {
+  transition: 0.5s;
+  background-color: goldenrod;
+}
+@media (max-width: 1000px) {
+  nav .text {
+    font-size: 20px;
+  }
+}
+
+main .introduce {
+  width: 100%;
+  display: flex;
+}
+main .introduce .text-sec {
+  width: 60%;
+  height: 100%;
+  background-color: bisque;
+  border: 1px solid black;
+}
+main .introduce .text-sec .text {
+  padding: 0px 30px;
+  text-align: justify;
+  letter-spacing: 5px;
+}
+main .introduce .pic {
+  width: 40%;
+  height: 100%;
+}
+main .introduce .pic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=introduce.css.map */
