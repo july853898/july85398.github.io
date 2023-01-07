@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <title>天氣小卡</title>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        /* background-color: rgb(142, 182, 167); */
+    }
+
+    .container {
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(142, 182, 167);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+
+    }
+
+    .title {
+        width: 100%;
+        background-color: rgb(206, 155, 126);
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        margin: 50px 0 30px 0;
+    }
+
+    .big-card {
+        width: 70%;
+    }
+
+    .information {
+        width: 100%;
+        /* padding: 0 100px; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        margin: 0 0 50px 0;
+    }
+
+    .location {
+        width: 80px;
+        height: 30px;
+        background-color: blanchedalmond;
+        border-radius: 50px;
+        color: rgb(108, 158, 140);
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    .weather-card {
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        color: white;
+    }
+
+    .icon {
+        width: 100px;
+        margin: 15px 0;
+    }
+
+    .date {
+        font-size: 25px;
+        margin: 15px 0;
+    }
+
+    .place {
+        font-size: 30px;
+        margin: 15px 0;
+    }
+
+    .temperature {
+        font-size: 35px;
+        margin: 15px 0;
+    }
+
+    .map {
+        width: 400px;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 20px;
+        padding: 10px;
+    }
+
+    .taiwan {
+        width: 100%;
+    }
+
+    .description {
+        font-size: 30px;
+        margin: 10px 0;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="title">天氣預報</div>
+        <div class="btn">
+            <div class="location all">全部</div>
+            <div class="location north">北部</div>
+            <div class="location west">中部</div>
+            <div class="location south">南部</div>
+            <div class="location east">東部</div>
+            <div class="location island">離島</div>
+        </div>
+        <div class="big-card">
+            <div class="information">
+                <div class="map">
+                    <img class="taiwan" src="./img/TWMap-02.png" alt="">
+                </div>
+                <div class="weather-card">
+                    <div class="date">2022 / 11 / 16</div>
+                    <div>
+                        <img class="icon" src="./img/cloud.png" alt="">
+                    </div>
+                    <div class="place">台北</div>
+                    <div class="temperature">26~30°C</div>
+                    <div>
+                        <p class="description">晴時多雲</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const btn = document.querySelector('.btn')
+        const date = document.querySelector('.date')
+        const place = document.querySelector('.place')
+        const temperature = document.querySelector('.temprature')
+        const bigCard = document.querySelector('.big-card')
+        const locations = document.querySelectorAll('.location')
+        const container = document.querySelector('.container')
+
+        let all = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+        let north = [5, 1, 3, 4, 13, 7, 18]
+        let west = [8, 11, 14, 20]
+        let south = [9, 0, 2, 6, 15, 17]
+        let east = [10, 12]
+        let island = [21, 16, 19]
+
+        let iconMap = { //用資料庫的索引質，定義各地區出現的圖片
+            0: './img/map/chaiyi-country.png',
+            1: './img/map/newtaipei.png',
+            2: './img/map/chaiyi-city.png',
+            3: './img/map/hsinchu-country.png',
+            4: './img/map/hsinchu-city.png',
+            5: './img/map/taipei.png',
+            6: './img/map/tainan.png',
+            7: './img/map/yilan.png',
+            8: './img/map/miaoli.png',
+            9: './img/map/yunlin.png',
+            10: './img/map/hualien.png',
+            11: './img/map/taichung.png',
+            12: './img/map/taitung.png',
+            13: './img/map/taoyuan.png',
+            14: './img/map/nantou.png',
+            15: './img/map/kaohsiung.png',
+            16: './img/map/Kinmen.png',
+            17: './img/map/pingtung.png',
+            18: './img/map/keelung.png',
+            19: './img/map/Penghu.png',
+            20: './img/map/changhua.png',
+            21: './img/map/Lienchiang.png',
+        }
+
+        let data = fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-AB60A631-F55A-4EA1-A28F-D3045263EE24').then(function (response) {
+            return response.json()
+        }).then(function (data) {
+            console.log(data);
+
+            let cloud = './img/cloud.png'
+            let sun = './img/sun.png'
+            let rain = './img/rain.png'
+            let cloudy = './img/cloudy.png'
+
+            let weather = function (w) { //把description做成一個功能
+                return data.records.location[w].weatherElement[0].time[0].parameter.parameterName;
+            }
+
+            let icon = function (p) {
+                if (weather(p).includes('雨')) {
+                    return rain;
+                } else if (weather(p).includes('晴')) {
+                    return sun;
+                } else if (weather(p).includes('雲')) {
+                    return cloud;
+                } else if (weather(p).includes('陰')) {
+                    return cloudy;
+                }
+            }
+
+            let weatherCard = function (i) {
+                bigCard.innerHTML += `
+                            <div class="information">
+                                <div class="map">
+                                    <img class="taiwan" src="${iconMap[i]}" alt="">
+                                </div>
+                                <div class="weather-card">
+                                    <div class="date">${data.records.location[i].weatherElement[0].time[0].startTime.slice(0, 10)}</div>
+                                    <div>
+                                        <img class="icon" src="${icon(i)}" alt="">
+                                    </div>
+                                    <div class="place">${data.records.location[i].locationName}</div>
+                                    <div class="temperature">${data.records.location[i].weatherElement[2].time[0].parameter.parameterName}°C</div>
+                                    <div>
+                                        <p class="description">${data.records.location[i].weatherElement[0].time[0].parameter.parameterName}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            `
+                //slice是把不要的東西切掉，針對字串或陣列
+                //slice( a, b ) 從 a 之前切到 b 之前
+            }
+
+            locations.forEach(function (location, index) {
+                // console.log(location, index);
+                location.addEventListener('click', function () { //按下有「location」屬性的按鈕時，進行以下功能   
+                    container.style.height = '100%';
+                    bigCard.innerHTML = ``; //清空假資料
+                    if (index == 0) {
+                        all.forEach(function (i) {
+                            weatherCard(i);
+                        })
+                    } else if (index == 1) {  //索引值是1的時候，出現 north 陣列
+                        north.forEach(function (i) { //north 陣列裡的每一個物件都進行一次function，參數i可以隨意取名稱，但在這個function裡面要用同一個參數名稱
+                            // console.log(data.records.location[i]); 
+                            weatherCard(i);
+                        })
+                    } else if (index == 2) {
+                        west.forEach(function (i) {
+                            weatherCard(i);
+                        })
+                    } else if (index == 3) {
+                        south.forEach(function (i) {
+                            weatherCard(i);
+                        })
+                    } else if (index == 4) {
+                        east.forEach(function (i) {
+                            weatherCard(i);
+                        })
+                    } else if (index == 5) {
+                        island.forEach(function (i) {
+                            weatherCard(i);
+                        })
+                    }
+                });
+
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>
