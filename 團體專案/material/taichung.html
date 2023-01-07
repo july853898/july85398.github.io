@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>台中SlowMotion</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="taichung.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:200,300,400,500,600,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <script>
+        function placeholderPic() {
+            var w = document.documentElement.offsetWidth;
+            var c = Math.floor(w / 60);
+            var p = Math.floor(w / 35);
+            var m = Math.floor(w / 25);
+            if (w > 1025) {
+                document.documentElement.style.fontSize = c + 'px';
+            } else if (w <= 1024 && w > 576) {
+                document.documentElement.style.fontSize = p + 'px';
+            } else if (w <= 576) {
+                document.documentElement.style.fontSize = m + 'px';
+            }
+        }
+        placeholderPic();
+        window.onresize = function () {
+            placeholderPic();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="mb_menuBtn">
+        <div id="mb_hamburger" class="mb_hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div id="mb_cross">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <div class="nav">
+        <span class="navTitle">TAICHUNG<span>CITY</span><span>TOURISM</span></span>
+        <div class="menuBtn">
+            <div id="hamburger" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="cross">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div class="navInner">
+        <div class="bigBox">
+            <h1>舊城漫漫</h1>
+            <span>Taichung City<br>
+                Tourism<br>
+                Introduction.</span>
+        </div>
+        <div class="innerTitle">
+            <div class="text">
+                <hr>
+                <a id="tou2" href="#tour-Service">導覽服務</a><span>Tour Service</span>
+            </div>
+            <div class="text">
+                <hr>
+                <a id="tou" href="#tourism">路線推薦</a><span>Tourism</span>
+            </div>
+            <div class="text">
+                <hr>
+                <a id="int" href="#introduction">景點介紹</a><span>Introduction</span>
+            </div>
+            <div class="text">
+                <hr>
+                <a id="his" href="#history">歲月穿梭</a><span>History</span>
+            </div>
+        </div>
+        <div class="logo"></div>
+        <div class="box">
+            <h1>慢速台中
+                <hr><span>Taichung in Slow Motion</span></h1>
+        </div>
+    </div>
+    <div class="window">
+        <div class="main">
+            <div class="home">
+                <div class="mainTitle" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">舊城漫漫</div>
+                <div class="line"></div>
+                <span class="text1">慢慢舊城<br>
+                    漫步舊城</span>
+                <span class="text2">Taichung City<br>
+                    Tourism<br>
+                    Introduction.</span>
+                <div class="cityImg"></div>
+            </div>
+            <div class="navImg"></div>
+        </div>
+        <div id="history" class="history">
+            <div class="container">
+                <div>
+                    <h1 data-aos="fade-up" data-aos-easing="linear" data-aos-anchor-placement="bottom-bottom"
+                        data-aos-duration="1500">歲月穿梭
+                        <hr><span>History</span></h1>
+                    <p>台中中區是目前台灣都市中，少數仍保有老城中
+                        心與日治文化地景的城市，沿著火車站到臺灣大道的軸線，可以明顯看出老城中心之發展變化與不可取代文化記憶。</p>
+                </div>
+                <div class="map"></div>
+            </div>
+        </div>
+        <div class="history2">
+            <div class="container">
+                <button id="historyBtn" class="secition1 button"><a href="#historyInner">歷史介紹</a></button>
+            </div>
+            <div class="historyani">
+                <div class="line"></div>
+                <div class="circle"></div>
+                <div class="circle2"></div>
+            </div>
+            <div id="historyInner" class="historyInner">
+                <div class="slides">
+                    <div id="scroll" class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide swiper-no-swiping scrollSwiper1">
+                                <h1>1764</h1>
+                                <h5>「大墩 」</h5>
+                                <span>臺中市中區舊稱為「大墩街」，早在清乾隆末年<br>
+                                    聚落已逐漸形成街肆，從此大墩街日漸繁榮。</span>
+                                <div></div>
+                            </div>
+                            <div class="swiper-slide swiper-no-swiping scrollSwiper2">
+                                <div></div>
+                                <h5>「市井」</h5>
+                                <h1>1874</h1>
+                                <span>主要街道分為頂、中街、下街。頂街舊址在現在的光復<br>
+                                    國小，當時是馬捨公廟，祭祀的是輔順將軍，這座廟後<br>
+                                    來遷至中山路和中華路交界之處。中街為米店和雜貨店<br>
+                                    集中的地方，也是商業最鼎盛的市中心區。下街有轎店<br>
+                                    、蔬菜、鮮魚的露天市場和墓地等。在這三條主要街道<br>
+                                    的西側有舊街和窄巷，形成交錯的巷道網。 </span>
+                            </div>
+                            <div class="swiper-slide swiper-no-swiping scrollSwiper3">
+                                <div></div>
+                                <h1>1903</h1>
+                                <span>日人在台中實施市區改正計畫，開闢斜貫大墩下街之舊<br>
+                                    街道，並增築今之自由路、市府路、繼光街等街道。<br>
+                                    至西元1905年縱貫鐵路開通後，使市區向火車站方向伸<br>
+                                    展，街肆更加繁榮發展，由台中火車站至今中華路，以<br>
+                                    及公園路至民權路之地區為商業區，商業日益鼎盛。</span>
+                                <h5>「改正」</h5>
+                            </div>
+                            <div class="swiper-slide swiper-no-swiping scrollSwiper4">
+                                <div class="img1"></div>
+                                <div class="img2"></div>
+                                <div class="img3"></div>
+                            </div>
+                            <div class="swiper-slide swiper-no-swiping scrollSwiper5">
+                                <h1>1945</h1>
+                                <h5>「更迭 」</h5>
+                                <span>而光復後因大批隨著國民政府來台的人口，都市人口快<br>
+                                    速增加，商業也日漸繁榮，高密度的商家使中區成為了<br>
+                                    當時最繁華的地段。<br><br>
+                                    繼光街附近短短不到兩百公尺的距離內就有東海、成功<br>
+                                    及台中三間戲院，由此可得知當時此街區的繁榮與人潮<br>
+                                    之眾多。同時光復後國民黨政府接手行啟紀念館作為憲<br>
+                                    兵隊用地，1961年拆除紀念館並改建成綜合大樓。
+                                </span>
+                            </div>
+                            <div class="swiper-slide swiper-no-swiping scrollSwiper6">
+                                <div class="img1"></div>
+                                <div class="img2"></div>
+                            </div>
+                            <div class="swiper-slide swiper-no-swiping scrollSwiper7">
+                                <h5>「成形 」</h5>
+                                <h1>1980</h1>
+                                <span>由於百貨公司沿著台中港路(今臺灣大道)往屯區發展，<br>
+                                    舊市區逐漸沒落，當年的台中港路沿線開始蓬勃發展，<br>
+                                    形成臺中市發展之重要軸線。此後中區傳統商圈面臨強<br>
+                                    大壓力，不得不著手進行改造，至今已有電子街商圈、<br>
+                                    繼光商圈、自由商圈等。
+                                </span>
+                                <div></div>
+                                <p>
+                                    另外傳統商店及新興產業長期發展也形成特色商街，如<br>
+                                    中華路的「中華路夜市」、平等街的「銀樓街」、三民路的<br>
+                                    「第二市場」、「婚紗街」、「喜餅街」；成功路的「青草<br>
+                                    街」、興中街的「糖果街」與中山路的「水果街」的商街，<br>
+                                    以及繼光商圈後來崛起的東南亞異國美食。
+                                </p>
+                            </div>
+                            <div class="swiper-slide swiper-no-swiping scrollSwiper8">
+                                <div class="img"></div>
+                                <h1>現今</h1>
+                                <span>台中市中區是目前台灣都市中，少數仍保有老城中心與<br>
+                                    日治文化地景的城市，沿著火車站到臺灣大道的軸線，<br>
+                                    可以明顯看出老城中心之發展變化與不可取代文化記憶<br>
+                                    。<br>
+                                    這些傳統產業資源與老城特色，將會是未來文化生活圈。</span>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="space"></div>
+        <div id="introduction" class="introduction">
+            <div class="container">
+                <h1 class="pcTitle">
+                    <div></div><span>Introduction</span><br>景點介紹
+                </h1>
+                <h1 class="mbTitle" data-aos="fade-up" data-aos-easing="linear"
+                    data-aos-anchor-placement="bottom-bottom" data-aos-duration="1500">
+                    景點介紹
+                    <hr><span>Introduction</span>
+                </h1>
+                <span class="text">青山依舊在，幾度夕陽紅。慣看<br>秋月春風。一壺濁酒喜相逢，浪</span>
+            </div>
+            <div class="slides">
+                <div class="swiper">
+                    <div id="ture" class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide line1pic1"></div>
+                            <div class="swiper-slide line1pic2"></div>
+                            <div class="swiper-slide line1pic3"></div>
+                            <div class="swiper-slide line1pic4"></div>
+                            <div class="swiper-slide line1pic5"></div>
+                            <div class="swiper-slide line1pic6"></div>
+                            <div class="swiper-slide line1pic7"></div>
+                            <div class="swiper-slide line1pic8"></div>
+                            <div class="swiper-slide line1pic9"></div>
+                            <div class="swiper-slide line1pic10"></div>
+                            <div class="swiper-slide line1pic11"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper">
+                    <div id="reverse" class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide line2pic1"></div>
+                            <div class="swiper-slide line2pic2"></div>
+                            <div class="swiper-slide line2pic3"></div>
+                            <div class="swiper-slide line2pic4"></div>
+                            <div class="swiper-slide line2pic5"></div>
+                            <div class="swiper-slide line2pic6"></div>
+                            <div class="swiper-slide line2pic7"></div>
+                            <div class="swiper-slide line2pic8"></div>
+                            <div class="swiper-slide line2pic9"></div>
+                            <div class="swiper-slide line2pic10"></div>
+                            <div class="swiper-slide line2pic11"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper">
+                    <div id="ture2" class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide line3pic1"></div>
+                            <div class="swiper-slide line3pic2"></div>
+                            <div class="swiper-slide line3pic3"></div>
+                            <div class="swiper-slide line3pic4"></div>
+                            <div class="swiper-slide line3pic5"></div>
+                            <div class="swiper-slide line3pic6"></div>
+                            <div class="swiper-slide line3pic7"></div>
+                            <div class="swiper-slide line3pic8"></div>
+                            <div class="swiper-slide line3pic9"></div>
+                            <div class="swiper-slide line3pic10"></div>
+                            <div class="swiper-slide line3pic11"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="secition2 button"><a href="Introduction2.html">景點一覽</a></button>
+        </div>
+        <div id="tourism" class="tourism">
+            <div class="container">
+                <h1 data-aos="fade-up" data-aos-easing="linear" data-aos-anchor-placement="bottom-bottom"
+                    data-aos-duration="1500">路線推薦
+                    <hr><span>Tourism</span></h1>
+            </div>
+            <div class="mapGrounp">
+                <div class="container">
+                    <div class="mapBtn">
+                        <div id="mapSwiper" class="swiper-container mapSwiper">
+                            <ul class="swiper-wrapper buttonGroup">
+                                <li class="swiper-slide mapslide1"><button class="button">散步觀光地圖</button></li>
+                                <li class="swiper-slide mapslide2"><button class="button">鈴蘭通深度旅行</button></li>
+                                <li class="swiper-slide mapslide3"><button class="button">美軍大兵寫真映像</button></li>
+                                <li class="swiper-slide mapslide4"><button class="button">千越大樓華麗轉身</button></li>
+                                <li class="swiper-slide mapslide5"><button class="button">人生交易所</button></li>
+                                <li class="swiper-slide mapslide6"><button class="button">親親時光印記</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mapImg1">
+                        <div class="map1pic1"></div>
+                        <div class="map1pic2"></div>
+                        <div class="map1pic3"></div>
+                        <div class="map1pic4"></div>
+                        <div class="map1pic5"></div>
+                        <div class="map1pic6"></div>
+                        <span>第一廣場(東協廣場)變成怎麼樣？台中舊城區有多少文創社團進駐？甚麼是「隱者地圖」？方圓1公里內有很多人文薈萃萬分精彩！<br>
+                            台中城已開發100多年了，因應新的臺中火車站發展，台中舊城區將有重大的商機改變。綠川、柳川整治，有人文歷史匯集的中區，<br>
+                            國際自由行旅客、外籍移工、背包客等，不斷有令人驚豔的團體萌芽，逐漸開始形成中區的文創聚落。<br>
+                            <br>
+                            本次活動邀請到「看見台中城-隱者地圖」幫我們導覽中區大型企業賦予老屋的新生命，有小型文創社團進駐的商業化，有最有味道的<br>
+                            文創潛力團體等。歡迎大家邀家人朋友踴躍參加。
+                        </span>
+                    </div>
+                    <div class="mapImg2">
+                        <div class="map2pic1"></div>
+                        <div class="map2pic2"></div>
+                        <div class="map2pic3"></div>
+                        <div class="map2pic4"></div>
+                        <div class="map2pic5"></div>
+                        <div class="map2pic6"></div>
+                        <div class="map2pic7"></div>
+                        <span>第一廣場(東協廣場)變成怎麼樣？台中舊城區有多少文創社團進駐？甚麼是「隱者地圖」？方圓1公里內有很多人文薈萃萬分精彩！<br>
+                            台中城已開發100多年了，因應新的臺中火車站發展，台中舊城區將有重大的商機改變。綠川、柳川整治，有人文歷史匯集的中區，<br>
+                            國際自由行旅客、外籍移工、背包客等，不斷有令人驚豔的團體萌芽，逐漸開始形成中區的文創聚落。<br>
+                            <br>
+                            本次活動邀請到「看見台中城-隱者地圖」幫我們導覽中區大型企業賦予老屋的新生命，有小型文創社團進駐的商業化，有最有味道的<br>
+                            文創潛力團體等。歡迎大家邀家人朋友踴躍參加。
+                        </span>
+                    </div>
+                    <div class="mapImg3">
+                        <div class="map3pic1"></div>
+                        <div class="map3pic2"></div>
+                        <div class="map3pic3"></div>
+                        <div class="map3pic4"></div>
+                        <div class="map3pic5"></div>
+                        <div class="map3pic6"></div>
+                        <div class="map3pic7"></div>
+                        <div class="map3pic8"></div>
+                        <div class="map3pic9"></div>
+                        <div class="map3pic10"></div>
+                        <span>第一廣場(東協廣場)變成怎麼樣？台中舊城區有多少文創社團進駐？甚麼是「隱者地圖」？方圓1公里內有很多人文薈萃萬分精彩！<br>
+                            台中城已開發100多年了，因應新的臺中火車站發展，台中舊城區將有重大的商機改變。綠川、柳川整治，有人文歷史匯集的中區，<br>
+                            國際自由行旅客、外籍移工、背包客等，不斷有令人驚豔的團體萌芽，逐漸開始形成中區的文創聚落。<br>
+                            <br>
+                            本次活動邀請到「看見台中城-隱者地圖」幫我們導覽中區大型企業賦予老屋的新生命，有小型文創社團進駐的商業化，有最有味道的<br>
+                            文創潛力團體等。歡迎大家邀家人朋友踴躍參加。
+                        </span>
+                    </div>
+                    <div class="mapImg4">
+                        <div class="map4pic1"></div>
+                        <div class="map4pic2"></div>
+                        <div class="map4pic3"></div>
+                        <div class="map4pic4"></div>
+                        <div class="map4pic5"></div>
+                        <div class="map4pic6"></div>
+                        <span>第一廣場(東協廣場)變成怎麼樣？台中舊城區有多少文創社團進駐？甚麼是「隱者地圖」？方圓1公里內有很多人文薈萃萬分精彩！<br>
+                            台中城已開發100多年了，因應新的臺中火車站發展，台中舊城區將有重大的商機改變。綠川、柳川整治，有人文歷史匯集的中區，<br>
+                            國際自由行旅客、外籍移工、背包客等，不斷有令人驚豔的團體萌芽，逐漸開始形成中區的文創聚落。<br>
+                            <br>
+                            本次活動邀請到「看見台中城-隱者地圖」幫我們導覽中區大型企業賦予老屋的新生命，有小型文創社團進駐的商業化，有最有味道的<br>
+                            文創潛力團體等。歡迎大家邀家人朋友踴躍參加。
+                        </span>
+                    </div>
+                    <div class="mapImg5">
+                        <div class="map5pic1"></div>
+                        <div class="map5pic2"></div>
+                        <div class="map5pic3"></div>
+                        <div class="map5pic4"></div>
+                        <div class="map5pic5"></div>
+                        <div class="map5pic6"></div>
+                        <span>第一廣場(東協廣場)變成怎麼樣？台中舊城區有多少文創社團進駐？甚麼是「隱者地圖」？方圓1公里內有很多人文薈萃萬分精彩！<br>
+                            台中城已開發100多年了，因應新的臺中火車站發展，台中舊城區將有重大的商機改變。綠川、柳川整治，有人文歷史匯集的中區，<br>
+                            國際自由行旅客、外籍移工、背包客等，不斷有令人驚豔的團體萌芽，逐漸開始形成中區的文創聚落。<br>
+                            <br>
+                            本次活動邀請到「看見台中城-隱者地圖」幫我們導覽中區大型企業賦予老屋的新生命，有小型文創社團進駐的商業化，有最有味道的<br>
+                            文創潛力團體等。歡迎大家邀家人朋友踴躍參加。
+                        </span>
+                    </div>
+                    <div class="mapImg6">
+                        <div class="map6pic1"></div>
+                        <div class="map6pic2"></div>
+                        <div class="map6pic3"></div>
+                        <div class="map6pic4"></div>
+                        <div class="map6pic5"></div>
+                        <div class="map6pic6"></div>
+                        <span>第一廣場(東協廣場)變成怎麼樣？台中舊城區有多少文創社團進駐？甚麼是「隱者地圖」？方圓1公里內有很多人文薈萃萬分精彩！<br>
+                            台中城已開發100多年了，因應新的臺中火車站發展，台中舊城區將有重大的商機改變。綠川、柳川整治，有人文歷史匯集的中區，<br>
+                            國際自由行旅客、外籍移工、背包客等，不斷有令人驚豔的團體萌芽，逐漸開始形成中區的文創聚落。<br>
+                            <br>
+                            本次活動邀請到「看見台中城-隱者地圖」幫我們導覽中區大型企業賦予老屋的新生命，有小型文創社團進駐的商業化，有最有味道的<br>
+                            文創潛力團體等。歡迎大家邀家人朋友踴躍參加。
+                        </span>
+                    </div>
+                    <div class="mapHref">
+                        <a href="https://www.facebook.com/seetaichungcity/"
+                            style="color:white; text-decoration:none">預約導覽</a>
+                    </div>
+                    <p>第一廣場變成怎麼樣？台中舊城區有多少文創社團進駐？方圓1公里<br>
+                        內有很多人文薈萃萬分精彩！</p>
+                </div>
+                <div class="map" id="map"></div>
+            </div>
+        </div>
+        <div id="tourService" class="tourService">
+            <div id="tourCon" class="container">
+                <div class="bigBox">
+                    <h1 data-aos="fade-up" data-aos-easing="linear" data-aos-anchor-placement="bottom-bottom"
+                        data-aos-duration="1500">導覽服務
+                        <hr><span>Tour Service</span>
+                    </h1>
+                    <div class="box">
+                        <div>
+                            <span>「看見台中城」</span>
+                            <div class="href">
+                                <a href="#"><i class="fas fa-envelope-square"></i></a>
+                                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div>
+                            <p>詹小姐 0931629772</p>
+                            <p>seetaichungcity@gmail.com </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <h2>隱者地圖介紹</h2>
+                    <div class="text">
+                        <span>隱者地圖是台中最有溫度的小旅行，帶你遊玩的是一群城市隱者，由街友、獨居老人、中高齡失業
+                            者所組成，他們就像城市浪人一樣，在這場獨特的旅行中一邊訴說你不知道的城市風情與古老建築
+                            的智慧，一邊和你分享過往人生經驗與社會底層的聲音，訴說他們自己愛與生命的故事。</span>
+                        <p>民眾可以預約行程，票價的六成作為隱者收入，透過本活動近一步了解城市的不同面貌，不僅能提
+                            供隱者們一份工作來源，更能幫助他們改變人生。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="description" class="description">
+            <div class="container">
+                <div class="bigBox1">
+                    <div class="icon1" data-aos="flip-left" data-aos-easing="linear" data-aos-duration="800"
+                        data-aos-anchor-placement="center-bottom"></div>
+                    <div class="boxA">
+                        <h1>NT.250/位</h1>
+                        <span>團體預約報名請留言預計日期跟時段，<br>工作人員將會跟您接洽。</span>
+                        <p>親親時光印記為$360元/位</p>
+                    </div>
+                </div>
+                <div class="bigBox2">
+                    <div class="icon2" data-aos="flip-right" data-aos-easing="linear" data-aos-duration="800"
+                        data-aos-anchor-placement="center-bottom"></div>
+                    <div class="boxB">
+                        <h1>導覽說明</h1>
+                        <span>平日三人出團，周末五人出團，接受團體預約<br>早上10:00至12:00 下午16:00至18:00<br>購票方式 網路售票系統 Line預約</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img class="footerImg" src="img/Group208.png"></img>
+        <div id="footer" class="footer">
+            <div class="container">
+                <div class="leftBox">
+                    <h1 data-aos="fade-up" data-aos-easing="linear" data-aos-anchor-placement="bottom-bottom"
+                        data-aos-duration="500">舊城漫漫</h1>
+                </div>
+                <div class="midBox">
+                    <div>
+                        <a id="tou2" href="#tourService" class="text1">
+                            <div></div>
+                            <h1>導覽服務</h1><span>Tour Service</span>
+                        </a>
+                        <a id="tou" href="#tourism" class="text2">
+                            <div></div>
+                            <h1>路線推薦</h1><span>Tourism</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a id="int" href="#introduction" class="text3">
+                            <div></div>
+                            <h1>景點介紹</h1><span>Introduction</span>
+                        </a>
+                        <a id="his" href="#history" class="text4">
+                            <div></div>
+                            <h1>歲月穿梭</h1><span>History</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="rightBox">
+                    <h1>慢速台中
+                        <hr><span>Taichung</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="taichung.js"></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEctB0JlLfeRvt-F420WliVMLq5VaWhYs"></script>
+
+    <script type="text/javascript">
+        // When the window has finished loading create our google map below
+        google.maps.event.addDomListener(window, 'load', init);
+
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 16,
+
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(24.138539, 120.683924), // New York
+
+                // How you would like to style the map. 
+                // This is where you would paste any style found on Snazzy Maps.
+                styles: [{ "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{ "color": "#444444" }] }, { "featureType": "administrative.land_parcel", "elementType": "labels.text.stroke", "stylers": [{ "color": "#d7caca" }] }, { "featureType": "landscape", "elementType": "all", "stylers": [{ "color": "#f2f2f2" }] }, { "featureType": "poi", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "road", "elementType": "all", "stylers": [{ "saturation": -100 }, { "lightness": 45 }] }, { "featureType": "road.highway", "elementType": "all", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "transit", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "color": "#d7d2d2" }, { "visibility": "on" }] }]
+            };
+
+            // Get the HTML DOM element that will contain your map 
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('map');
+
+            // Create the Google Map using our element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+
+            // Let's also add a marker while we're at it
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(40.6700, -73.9400),
+                map: map,
+                title: 'Snazzy!'
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/wavecss.css">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <div id="wave-container">
+        <div class="bubbles" num="50" duration="10"></div>
+        <img class="plane" src="./img/plane.png" alt="">
+        <div class="sun-box">
+            <div class="sun"></div>
+            <div class="sun"></div>
+            <div class="sun"></div>
+        </div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave a"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>   
+    </div>
+
+    
+    <script>
+        
+        const waves = document.querySelector('#wave-container');
+        const wave = document.querySelector('.a');
+
+        waves.addEventListener('wheel',function(e){
+
+            if(parseInt(e.deltaY) > 0 ){
+                console.log('up');
+                wave.style = 'background-color: sky-blue; top:0px; z-index: 4; opacity: 1; transition: 3s;';   
+                
+                (function(w, d) {
+                    var bubbles = d.querySelector('.bubbles');
+                    var bubblesWidth = bubbles.clientWidth;
+                    var num = bubbles.getAttribute('num');
+                    var duration = bubbles.getAttribute('duration');
+
+                bubbleUp();
+                    setInterval(bubbleUp, duration * 1000);
+
+                    function bubbleUp() {
+                        bubbles.innerHTML = '';
+                        for(var i = 0; i < num; i++) {
+                            var bubbleDiv = d.createElement('div');
+                            bubbleDiv.classList.add('bubble');
+                            bubbleDiv.style.cssText = `
+                            transform: translate(${bubblesWidth * Math.random()}px, 0) scale(${5 * Math.random()});
+                            animation: up ${duration * Math.random() + 1}s ease-in-out;
+                            `
+                            bubbles.appendChild(bubbleDiv);
+                        };
+                    };
+
+                })(window, document);      
+            }else{
+                wave.style = 'background-color: sky-blue; top:1000px; z-index: 4; opacity: 1; transition: 3s;';
+
+            }            
+        });
+    </script>
+</body>
+</html>

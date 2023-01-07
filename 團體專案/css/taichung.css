@@ -1,0 +1,2059 @@
+/* 通用 */
+
+* {
+    box-sizing: border-box;
+    font-family: 'Noto Serif TC', serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("img/BG2081.png");
+}
+
+button {
+    outline: none;
+}
+
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+.container {
+    width: 80%;
+    max-width: 61.856%;
+    margin: 0 auto;
+}
+
+.button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.button {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    padding: 0.1875rem 0.625rem;
+    margin: 0;
+    cursor: pointer;
+    border: 1px solid #bbb;
+    overflow: visible;
+    font: bold 0.4063rem arial, helvetica, sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
+    color: #555;
+    background-color: #ddd;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 1)), to(rgba(255, 255, 255, 0)));
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    background-image: linear-gradient(top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    -webkit-transition: background-color .2s ease-out;
+    -moz-transition: background-color .2s ease-out;
+    -ms-transition: background-color .2s ease-out;
+    -o-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    background-clip: padding-box;
+    -moz-border-radius: 0.0938rem;
+    -webkit-border-radius: 0.0938rem;
+    border-radius: 0.0938rem;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .3), 0 2px 2px -1px rgba(0, 0, 0, .5), 0 1px 0 rgba(255, 255, 255, .3) inset;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .9);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.button:hover {
+    background-color: #eee;
+    color: #555;
+}
+
+.button:active {
+    background: #e9e9e9;
+    position: relative;
+    top: 0.0313rem;
+    text-shadow: none;
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .3) inset;
+}
+
+.button[disabled], .button[disabled]:hover, .button[disabled]:active {
+    border-color: #eaeaea;
+    background: #fafafa;
+    cursor: default;
+    position: static;
+    color: #999;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+.buttonGroup, .buttonGroup li {
+    display: flex;
+    zoom: 1;
+}
+
+.buttonGroup {
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.buttonGroup li {
+    margin-right: -0.0313rem;
+}
+
+.buttonGroup .button {
+    width: 100%;
+    font-size: 0.75rem;
+    text-align: center;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.buttonGroup .button:active {
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, 5px 0 5px -3px rgba(0, 0, 0, .2) inset, -5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, 5px 0 5px -3px rgba(0, 0, 0, .2) inset, -5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, 5px 0 5px -3px rgba(0, 0, 0, .2) inset, -5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+}
+
+.buttonGroup li:first-child .button {
+    -moz-border-radius: 0.0938rem 0 0 0.0938rem;
+    -webkit-border-radius: 0.0938rem 0 0 0.0938rem;
+    border-radius: 0.0938rem 0 0 0.0938rem;
+}
+
+.buttonGroup li:first-child .button:active {
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, -5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, -5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, -5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+}
+
+.buttonGroup li:last-child .button {
+    -moz-border-radius: 0 0.0938rem 0.0938rem 0;
+    -webkit-border-radius: 0 0.0938rem 0.0938rem 0;
+    border-radius: 0 0.0938rem 0.0938rem 0;
+}
+
+.buttonGroup li:last-child .button:active {
+    -moz-box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, 5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+    -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, 5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .2) inset, 5px 0 5px -3px rgba(0, 0, 0, .2) inset;
+}
+
+/* 通用到此 */
+
+/* 主頁 */
+
+.window {
+    position: relative;
+    margin-left: 1.875rem;
+    width: calc(100% - 1.875rem);
+    overflow: hidden;
+}
+
+/* 側欄 */
+
+.nav {
+    height: 100%;
+    width: 1.875rem;
+    background-color: #423F4B;
+    position: fixed;
+    left: 0;
+    z-index: 52;
+}
+
+.nav .navTitle {
+    writing-mode: vertical-lr;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.375rem;
+    letter-spacing: 0.0625rem;
+    color: white;
+}
+
+.nav .navTitle span {
+    padding-top: 0.25rem;
+}
+
+.nav .menuBtn {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1%;
+    overflow: hidden;
+    z-index: 53;
+}
+
+.nav .menuBtn .hamburger {
+    width: 0.7813rem;
+    cursor: pointer;
+}
+
+.nav .menuBtn .hamburger span {
+    display: block;
+    width: 100%;
+    height: 0.125rem;
+    border-radius: 0.125rem;
+    background-color: #fff;
+    margin-bottom: 0.25rem;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav .menuBtn .hamburger.active span:nth-child(1) {
+    transform: translateY(0.375rem) rotate(45deg);
+}
+
+.nav .menuBtn .hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav .menuBtn .hamburger.active span:nth-child(3) {
+    transform: translateY(-0.375rem) rotate(-45deg);
+}
+
+/* 側欄到此 */
+
+/* 手機板側欄 */
+
+.mb_menuBtn {
+    position: fixed;
+    top: 0.625rem;
+    left: 0.625rem;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 53;
+}
+
+.mb_menuBtn .mb_hamburger {
+    width: 1.0938rem;
+    cursor: pointer;
+}
+
+.mb_menuBtn .mb_hamburger span {
+    display: block;
+    width: 100%;
+    height: 0.125rem;
+    border-radius: 0.125rem;
+    background-color: #1a1a1a;
+    margin-bottom: 0.25rem;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.mb_menuBtn .mb_hamburger.active span:nth-child(1) {
+    transform: translateY(0.375rem) rotate(45deg);
+}
+
+.mb_menuBtn .mb_hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mb_menuBtn .mb_hamburger.active span:nth-child(3) {
+    transform: translateY(-0.375rem) rotate(-45deg);
+}
+
+/* 手機板側欄到此 */
+
+/* 側欄內頁 */
+
+.navInner {
+    width: calc(100% - 1.875rem);
+    height: 100%;
+    background: url("img/backgroup.png") no-repeat center center;
+    background-size: cover;
+    color: white;
+    left: -78.125rem;
+    transition: cubic-bezier(0.34, 0.08, 0.44, 0.82) 2.5s;
+    position: fixed;
+    z-index: 51;
+    padding: 2.8125rem 4.375rem;
+}
+
+.navInner.show {
+    left: 1.875rem;
+    transition: cubic-bezier(0.34, 0.08, 0.44, 0.82) 1.5s;
+}
+
+.navInner .bigBox {
+    float: left;
+}
+
+.navInner .bigBox>h1 {
+    font-size: 1.375rem;
+    font-weight: bold;
+    margin-bottom: 0.7813rem;
+    letter-spacing: 0.4375rem;
+}
+
+.navInner .bigBox>span {
+    font-size: 0.375rem;
+    font-weight: 500;
+    line-height: 0.75rem;
+}
+
+.navInner .innerTitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.navInner .innerTitle .text {
+    writing-mode: vertical-rl;
+    text-align: center;
+    display: flex;
+    margin: 0 0.8125rem;
+}
+
+.navInner .innerTitle .text>hr {
+    width: 0.625rem;
+    border: 1px solid white;
+    margin: 0 0.4688rem;
+    margin-bottom: 1.1563rem;
+}
+
+.navInner .innerTitle .text>a {
+    color: white;
+    text-decoration: none;
+    margin: 0;
+    font-size: 0.875rem;
+    margin-bottom: 1.1563rem;
+    line-height: 1.625rem;
+    letter-spacing: 0.6563rem;
+}
+
+.navInner .innerTitle .text>span {
+    font-size: 0.625rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0.0313rem;
+}
+
+.navInner .logo {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+    background: url("img/Path188.png") no-repeat center center;
+    background-size: cover;
+    float: right;
+}
+
+.navInner .box {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    margin-bottom: 2.25rem;
+}
+
+.navInner .box>h1 {
+    margin: 0;
+    font-size: 0.4688rem;
+    font-weight: 600;
+    letter-spacing: 0.3125rem;
+}
+
+.navInner .box>h1>hr {
+    width: 2.8125rem;
+    border: 1px solid white;
+}
+
+.navInner .box>h1>span {
+    font-size: 0.1875rem;
+    font-weight: 500;
+    letter-spacing: 0rem;
+}
+
+/* 側欄內頁到此 */
+
+/* 首頁 */
+
+.main .home .mainTitle {
+    font-size: 3.0938rem;
+    font-weight: 500;
+    letter-spacing: 0.9375rem;
+    position: absolute;
+    right: 10.25rem;
+    top: 5.4375rem;
+}
+
+.main .home .line {
+    height: 6.4063rem;
+    border-left: 3px solid black;
+    position: absolute;
+    right: 10.0938rem;
+    top: 6.5625rem;
+}
+
+.main .home .text1 {
+    font-size: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.0938rem;
+    line-height: 0.9063rem;
+    position: absolute;
+    right: 6.4375rem;
+    top: 6.3438rem;
+}
+
+.main .home .text2 {
+    font-size: 0.4375rem;
+    line-height: 0.9063rem;
+    position: absolute;
+    right: 19.0625rem;
+    top: 11.625rem;
+}
+
+.main .home .cityImg {
+    width: 4.0313rem;
+    height: 4.0313rem;
+    background: url("img/Path188.png") no-repeat center center;
+    background-size: contain;
+    border-radius: 50%;
+    position: absolute;
+    right: 12rem;
+    top: 11.625rem;
+}
+
+.main .navImg {
+    width: 47.5rem;
+    height: 18.75rem;
+    background: url("img/Group114.png") no-repeat center center;
+    margin-top: 18.75rem;
+}
+
+/* 首頁到此 */
+
+/* 歷史 */
+
+.history .container {
+    padding-top: 3.125rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history .container>div>h1 {
+    font-size: 1.75rem;
+    letter-spacing: 0.1875rem;
+    font-weight: 600;
+    margin: 0;
+    margin-top: 10rem;
+}
+
+.history .container>div>h1>hr {
+    margin: 0;
+    border: 2px solid black;
+    width: 7.1875rem;
+    margin-top: 0.5625rem;
+    margin-bottom: 0.1563rem;
+}
+
+.history .container>div>h1>span {
+    letter-spacing: 0.1563rem;
+}
+
+.history .container>div>p {
+    font-size: 0.5625rem;
+    padding-top: 1.7813rem;
+    line-height: 1.1563rem;
+    letter-spacing: 0.0625rem;
+    max-width: 13.125rem;
+    margin: 0;
+    text-align: justify;
+}
+
+.history .container .map {
+    width: 21.875rem;
+    height: 23.4375rem;
+    background: url("img/map2.png") no-repeat center center;
+    background-size: contain;
+    z-index: -1;
+}
+
+/* 歷史到此 */
+
+/* 歷史內頁 */
+
+.history2 {
+    position: relative;
+}
+
+.history2 .container .secition1 {
+    width: 7.125rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.history2 .container .secition1>a {
+    color: black;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.25rem;
+}
+
+.history2 .historyani {
+    opacity: 1;
+}
+
+.history2 .historyani.show {
+    opacity: 0;
+    transition-delay: 16s;
+    transition: 3s;
+}
+
+.history2 .historyani .line {
+    height: 0rem;
+    border-left: 1px solid black;
+    display: none;
+    position: absolute;
+    left: 19.4688rem;
+    top: 3.125rem;
+    z-index: 4;
+    animation-name: line;
+    animation-duration: 2s;
+}
+
+.history2 .historyani .circle {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: black;
+    display: none;
+    position: absolute;
+    left: 19.0938rem;
+    top: 3rem;
+    z-index: 4;
+    animation-name: circle;
+    animation-duration: 2s;
+}
+
+.history2 .historyani .circle2 {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: black;
+    display: none;
+    position: absolute;
+    left: 19.0938rem;
+    top: 3rem;
+    z-index: 4;
+}
+
+.history2 .historyani .line.show {
+    height: 21.4375rem;
+    display: block;
+}
+
+.history2 .historyani .circle.show {
+    top: 24.2188rem;
+    display: block;
+}
+
+.history2 .historyani .circle2.show {
+    display: block;
+}
+
+@keyframes line {
+    0% {
+        height: 0rem;
+    }
+    100% {
+        height: 21.4375rem;
+    }
+}
+
+@keyframes circle {
+    0% {
+        top: 3rem;
+    }
+    100% {
+        top: 24.2188rem;
+    }
+}
+
+.history2 .historyInner {
+    width: 100%;
+    height: 25.625rem;
+    display: none;
+    animation: show 2.5s;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.history2 .historyInner.show {
+    display: block;
+    position: absolute;
+    top: 6.4375rem;
+    z-index: 3;
+    animation: show 2.5s;
+    opacity: 1;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.history2 .historyInner .slides {
+    width: 100%;
+    height: 100%;
+}
+
+.history2 .historyInner #scroll {
+    width: 100%;
+    height: 100%;
+}
+
+.history2 .historyInner #scroll .swiper-wrapper .swiper-slide {
+    transition-timing-function: ease-in;
+}
+
+.history2 .historyInner .slides #scroll .swiper-wrapper .scrollSwiper1 {
+    width: calc(100vw - 3.1875rem);
+    height: 25.625rem;
+    position: relative;
+}
+
+.history2 .historyInner .slides .scrollSwiper1>h1 {
+    font-size: 3.75rem;
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    left: 20.1875rem;
+    top: 8.7813rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper1>h5 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+    position: absolute;
+    left: 19.0313rem;
+    top: 15.2188rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper1>span {
+    font-size: 0.5625rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    position: absolute;
+    left: 20.625rem;
+    top: 18.375rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper1>div {
+    width: 16.375rem;
+    height: 24.125rem;
+    background-color: #555;
+    position: absolute;
+    top: 0;
+    right: 3.0313rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper2 {
+    width: calc(100vw - 3.1875rem);
+    height: 25.625rem;
+    position: relative;
+}
+
+.history2 .historyInner .slides .scrollSwiper2>div {
+    width: 11.7188rem;
+    height: 17.25rem;
+    background-color: #555;
+    position: absolute;
+    top: 4.3125rem;
+    left: -2rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper2>h5 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+    position: absolute;
+    left: 11.5rem;
+    top: 5rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper2>h1 {
+    font-size: 3.75rem;
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    left: 12.5938rem;
+    top: 7.5625rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper2>span {
+    font-size: 0.5625rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    position: absolute;
+    top: 13.75rem;
+    left: 24.2188rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper3 {
+    width: calc(100vw - 3.1875rem);
+    height: 25.625rem;
+    position: relative;
+}
+
+.history2 .historyInner .slides .scrollSwiper3>div {
+    width: 20.0625rem;
+    height: 22.6563rem;
+    background-color: #555;
+    position: absolute;
+    left: -12.4688rem;
+    top: 2.0313rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper3>h1 {
+    font-size: 3.75rem;
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    left: 3.0313rem;
+    bottom: 4.9688rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper3>span {
+    font-size: 0.5625rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    position: absolute;
+    left: 18.0625rem;
+    top: 8.5625rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper3>h5 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+    position: absolute;
+    left: 16.5rem;
+    bottom: 5.6563rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper4 {
+    width: calc(100vw - 3.1875rem);
+    height: 25.625rem;
+    position: relative;
+}
+
+.history2 .historyInner .slides .scrollSwiper4 .img1 {
+    width: 40rem;
+    height: 25.625rem;
+    background-color: #555;
+    position: absolute;
+    top: 0;
+    left: -21.5625rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper4 .img2 {
+    width: 14.5625rem;
+    height: 19.6875rem;
+    background-color: #555;
+    position: absolute;
+    top: 3.2813rem;
+    left: 21.25rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper4 .img3 {
+    width: 15.75rem;
+    height: 10.1563rem;
+    background-color: #555;
+    position: absolute;
+    top: 3.2813rem;
+    right: 3.0938rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper5 {
+    width: calc(100vw - 3.1875rem);
+    height: 25.625rem;
+    position: relative;
+}
+
+.history2 .historyInner .slides .scrollSwiper5>h1 {
+    font-size: 3.75rem;
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    left: 8.9063rem;
+    top: 2.1563rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper5>h5 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+    position: absolute;
+    left: 21.3125rem;
+    top: 5.25rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper5>span {
+    font-size: 0.5625rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    position: absolute;
+    left: 15.625rem;
+    top: 11.25rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper6 {
+    width: calc(100vw - 3.1875rem);
+    height: 25.625rem;
+    position: relative;
+}
+
+.history2 .historyInner .slides .scrollSwiper6 .img1 {
+    width: 40.375rem;
+    height: 25.625rem;
+    background-color: #555;
+    position: absolute;
+    top: 0;
+    left: -23.0313rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper6 .img2 {
+    width: 23.4688rem;
+    height: 18.2188rem;
+    background-color: #555;
+    position: absolute;
+    top: 4.1875rem;
+    left: 19.75rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper7 {
+    width: calc(100vw - 3.1875rem);
+    height: 25.625rem;
+    position: relative;
+}
+
+.history2 .historyInner .slides .scrollSwiper7>h5 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+    position: absolute;
+    top: 3.4688rem;
+    left: -11.5625rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper7>h1 {
+    font-size: 3.75rem;
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    top: 5.6563rem;
+    left: -10.4688rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper7>span {
+    font-size: 0.5625rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    position: absolute;
+    top: 14.375rem;
+    left: -10.0313rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper7>div {
+    width: 15.5625rem;
+    height: 11.625rem;
+    background-color: #555;
+    position: absolute;
+    left: 6.9375rem;
+    top: 7.0313rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper7>p {
+    font-size: 0.5625rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    position: absolute;
+    top: 6.7188rem;
+    left: 24.3438rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper8 {
+    width: calc(100vw - 3.1875rem);
+    height: 25.625rem;
+    position: relative;
+}
+
+.history2 .historyInner .slides .scrollSwiper8 .img {
+    width: 34.9375rem;
+    height: 25.625rem;
+    background-color: #555;
+    position: absolute;
+    left: -12.6875rem;
+    top: 0;
+}
+
+.history2 .historyInner .slides .scrollSwiper8>h1 {
+    font-size: 3.75rem;
+    font-weight: bold;
+    margin: 0;
+    position: absolute;
+    left: 24.6875rem;
+    top: 8.9688rem;
+}
+
+.history2 .historyInner .slides .scrollSwiper8>span {
+    font-size: 0.5625rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    position: absolute;
+    top: 9.3438rem;
+    left: 37.8438rem;
+}
+
+.space {
+    display: none;
+}
+
+.space.show {
+    height: 80vh;
+    display: block;
+}
+
+/* 歷史內頁到此 */
+
+/* 景點介紹 */
+
+.introduction {
+    position: relative;
+}
+
+.introduction .container {
+    padding-top: 7.8125rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.introduction .container .pcTitle {
+    font-size: 1.9375rem;
+    writing-mode: vertical-lr;
+    letter-spacing: 0.2188rem;
+    font-weight: 600;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.introduction .container .pcTitle>div {
+    border-left-style: solid;
+    margin-right: 0.4688rem;
+}
+
+.introduction .container .pcTitle>span {
+    letter-spacing: 0rem;
+}
+
+.introduction .container .mbTitle {
+    display: none;
+}
+
+.introduction .container .text {
+    font-size: 0.5625rem;
+    color: black;
+    letter-spacing: 0.1563rem;
+    padding-top: 2.125rem;
+}
+
+.introduction .slides {
+    position: absolute;
+    top: 11.875rem;
+    right: 0;
+}
+
+.introduction .slides .swiper {
+    max-width: calc(100vw - 1.875rem);
+    overflow: hidden;
+}
+
+.introduction .slides .swiper .swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.introduction .slides .swiper .swiper-container .swiper-wrapper {
+    transition-timing-function: linear;
+}
+
+.introduction .slides .swiper .swiper-container .swiper-slide {
+    width: 9.375rem;
+    height: 5rem;
+    background-color: #999999;
+    border: 1px solid black;
+    filter: opacity(30%);
+    position: relative;
+}
+
+.introduction .slides .swiper .swiper-container .swiper-slide:hover {
+    filter: opacity(100%);
+}
+
+.introduction .secition2 {
+    width: 7.125rem;
+    margin: 10rem auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.introduction .secition2>a {
+    color: black;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.25rem;
+}
+
+/* 景點介紹到此 */
+
+/* 路線推薦 */
+
+.tourism {
+    position: relative;
+}
+
+.tourism .container {
+    padding-top: 3.125rem;
+}
+
+.tourism .container>h1 {
+    width: 8.4375rem;
+    font-size: 1.9375rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.1563rem;
+    font-weight: 600;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tourism .container>h1>hr {
+    border: 1px solid black;
+    margin-top: 0.9375rem;
+    margin-bottom: 0.375rem;
+}
+
+.tourism .container>h1>span {
+    line-height: 1.0313rem;
+    letter-spacing: 0rem;
+}
+
+.tourism .mapGrounp .container .mapBtn {
+    margin: 0 auto;
+}
+
+.tourism .mapGrounp .container .mapBtn .mapSwiper {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    padding: 0.2188rem;
+    -moz-border-radius: 0.2188rem;
+    -webkit-border-radius: 0.2188rem;
+    border-radius: 0.2188rem;
+}
+
+.mapImg1, .mapImg2, .mapImg3, .mapImg4, .mapImg5, .mapImg6 {
+    width: 100%;
+    max-width: 36.5625rem;
+    display: none;
+    margin: 0 0.0313rem;
+    margin-top: 18.125rem;
+}
+
+.mapImg1.show, .mapImg2.show, .mapImg3.show, .mapImg4.show, .mapImg5.show, .mapImg6.show {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.mapImg1>div, .mapImg2>div, .mapImg3>div, .mapImg4>div, .mapImg5>div, .mapImg6>div {
+    width: 6.25rem;
+    height: 6.25rem;
+    border-radius: 50%;
+    background-color: #1a1a1a;
+    margin-top: 1.5625rem;
+}
+
+.tourism .mapGrounp .container span {
+    font-size: 0.5rem;
+    font-weight: 500;
+    line-height: 1.0313rem;
+    letter-spacing: 0.0313rem;
+    margin: 0 2.2813rem;
+    margin-top: 2.6875rem;
+}
+
+.tourism .mapGrounp .container .mapHref {
+    width: 13.4375rem;
+    height: 2.3438rem;
+    line-height: 2.3438rem;
+    background-color: #605566;
+    font-size: 1.125rem;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.2813rem;
+    margin: 2.4063rem auto 0 auto;
+}
+
+.tourism .mapGrounp .container p {
+    padding: 0;
+    margin: 0;
+    font-size: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.125rem;
+    line-height: 1rem;
+    text-align: center;
+    margin: 0.875rem auto 0 auto;
+}
+
+.tourism .mapGrounp .map {
+    width: calc(100vw - 1.875rem);
+    height: 15.625rem;
+    background-color: #B3B3B3;
+    position: absolute;
+    top: 13.7188rem;
+    right: 0;
+}
+
+.tourism .mbSwiper {
+    display: none;
+}
+
+/* 路線推薦到此 */
+
+/* 導覽服務 */
+
+.tourService .container {
+    padding-top: 10.9375rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tourService .container.move {
+    padding-top: 4.6875rem;
+}
+
+.tourService .container .bigBox {
+    width: 10.25rem;
+}
+
+.tourService .container .bigBox>h1 {
+    width: 8.4375rem;
+    font-size: 1.9375rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.1563rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.tourService .container .bigBox>h1>hr {
+    border: 1px solid black;
+    margin-top: 0.9375rem;
+    margin-bottom: 0.375rem;
+}
+
+.tourService .container .bigBox>h1>span {
+    font-size: 1.3438rem;
+    font-weight: 600;
+    letter-spacing: -0.0313rem;
+}
+
+.tourService .container .bigBox .box {
+    width: 10.25rem;
+    height: 4.125rem;
+    padding: 0.4688rem;
+    font-weight: 600;
+    border: 1px solid black;
+    letter-spacing: 0.0313rem;
+    margin-top: 2.6563rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.tourService .container .bigBox .box>div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tourService .container .bigBox .box span {
+    font-size: 0.625rem;
+    letter-spacing: 0.0625rem;
+    font-weight: 800;
+}
+
+.tourService .container .bigBox .box .href {
+    line-height: 0;
+}
+
+.tourService .box .href>a {
+    color: black;
+    font-size: 0.7813rem;
+    margin-right: 0.1563rem;
+}
+
+.tourService .container .bigBox .box p {
+    font-size: 0.5rem;
+    margin: 0;
+    letter-spacing: 0.0313rem;
+    margin-left: 0.375rem;
+}
+
+.tourService .container .content {
+    margin-left: 4.2188rem;
+}
+
+.tourService .container .content>h2 {
+    margin: 0;
+    font-size: 0.8125rem;
+    letter-spacing: 0.0938rem;
+}
+
+.tourService .container .content .text {
+    width: 100%;
+    max-width: 21.25rem;
+}
+
+.tourService .container .content .text>span {
+    font-size: 0.5rem;
+    letter-spacing: 0.0313rem;
+    font-weight: 400;
+    line-height: 1.3125rem;
+}
+
+.tourService .container .content .text>p {
+    margin: 1.4063rem 0 0 0;
+    padding: 0;
+    font-size: 0.5rem;
+    letter-spacing: 0.0313rem;
+    font-weight: 400;
+    line-height: 1.3125rem;
+}
+
+/* 導覽服務到此 */
+
+/* 導覽說明 */
+
+.description .container {
+    margin-top: 3.125rem;
+    display: flex;
+}
+
+.bigBox1, .bigBox2 {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.description .container .bigBox1 .icon1 {
+    width: 4.6875rem;
+    height: 4.6875rem;
+    border-radius: 50%;
+    background: url("img/money-icon-05.png") no-repeat center center;
+    background-size: contain;
+}
+
+.description .container .bigBox1 .boxA {
+    margin-left: 1.5625rem;
+}
+
+.description .container .bigBox1 .boxA>h1 {
+    font-size: 1.125rem;
+    margin: 0;
+    margin-bottom: 0.6875rem;
+}
+
+.description .container .bigBox1 .boxA>span {
+    font-size: 0.5rem;
+    font-weight: 500;
+    line-height: 0.8438rem;
+}
+
+.description .container .bigBox1 .boxA>p {
+    font-size: 0.5rem;
+    margin: 0.5625rem 0 0 0;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.description .container .bigBox2 .icon2 {
+    width: 4.6875rem;
+    height: 4.6875rem;
+    border-radius: 50%;
+    background: url("img/horn-icon-05.png") no-repeat center center;
+    background-size: contain;
+}
+
+.description .container .bigBox2 .boxB {
+    margin-left: 1.5625rem;
+}
+
+.description .container .bigBox2 .boxB>h1 {
+    font-size: 1.125rem;
+    margin: 0 0 0.6875rem 0;
+}
+
+.description .container .bigBox2 .boxB>span {
+    font-size: 0.5rem;
+    font-weight: 500;
+    line-height: 0.8438rem;
+}
+
+/* 導覽說明到此 */
+
+.footerImg {
+    width: 100%;
+    height: 18.9063rem;
+    margin-top: 4.6875rem;
+}
+
+/* Footer */
+
+.footer {
+    height: 6.25rem;
+    background-color: #1a1a1a;
+}
+
+.footer .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .container .leftBox {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .container .leftBox>h1 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.375rem;
+}
+
+.footer .container .midBox {
+    color: white;
+    display: flex;
+}
+
+.footer .container .midBox>div {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.footer .container .midBox>div>a {
+    color: white;
+}
+
+.footer .container .midBox>div:last-child {
+    margin-left: 0.625rem;
+}
+
+.text1, .text2, .text3, .text4 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.text2, .text4 {
+    margin-top: 0.3125rem;
+}
+
+.text1>div, .text2>div, .text3>div, .text4>div {
+    border-left-style: solid;
+    border-left-color: white;
+    height: 0.5313rem;
+    margin-right: 0.5313rem;
+}
+
+.text1>h1, .text2>h1, .text3>h1, .text4>h1 {
+    font-size: 0.5625rem;
+    font-weight: 500;
+    letter-spacing: 0.1563rem;
+    margin: 0;
+    margin-right: 0.6563rem;
+}
+
+.text1>span, .text2>span, .text3>span, .text4>span {
+    font-size: 0.1875rem;
+    font-weight: 500;
+    letter-spacing: 0.1563rem;
+}
+
+.footer .container .rightBox {
+    color: white;
+}
+
+.footer .container .rightBox>h1 {
+    margin: 0;
+    font-size: 0.4375rem;
+    letter-spacing: 0.0938rem;
+}
+
+.footer .container .rightBox>h1>hr {
+    margin: 0.25rem 0 0.0938rem 0;
+    border: 1px solid white;
+}
+
+.footer .container .rightBox>h1>span {
+    font-size: 0.1563rem;
+    letter-spacing: 0.0625rem;
+}
+
+/* Footer到此 */
+
+@media screen and (max-width:1200px) {
+    #nav .nav-title {
+        display: none;
+    }
+    #tour-Service .big-box .box p {
+        letter-spacing: 0;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .history .container {
+        flex-flow: column-reverse;
+    }
+    .history .container>div:first-child {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .history .container>div>h1 {
+        margin: 0;
+    }
+    .history .container>div>p {
+        padding: 0.3448rem;
+        text-align: center;
+    }
+    .history2 .container .secition1 {
+        margin: 0 auto;
+    }
+    .tourService .container {
+        flex-flow: column;
+    }
+    .tourService .container .bigBox {
+        width: initial;
+        display: flex;
+    }
+    .tourService .container .bigBox .box {
+        width: initial;
+        margin: 0 0 0 0.6897rem;
+    }
+    .tourService .container .content {
+        margin: 0.6897rem 0 0 0;
+        text-align: center;
+    }
+    .bigBox1, .bigBox2 {
+        width: 100%;
+    }
+    .boxA, .boxB {
+        width: 11.0345rem;
+    }
+    .description .container {
+        width: 100%;
+        max-width: 100%;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .description .container .bigBox2 .boxB {
+        margin-top: 1.3793rem;
+    }
+    .footer .container {
+        max-width: 100%;
+    }
+    .footer .container .rightBox>h1 {
+        display: none;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .nav {
+        display: none;
+    }
+    .mb_menuBtn {
+        display: block;
+    }
+    .navInner.show {
+        width: 100%;
+        left: 0;
+    }
+    .mb_menuBtn .mb_hamburger.active span {
+        background-color: #FFF;
+    }
+    .window {
+        width: 100%;
+        margin-left: 0;
+    }
+    .main .home .mainTitle {
+        font-size: 2.2609rem;
+        right: 6.9rem;
+    }
+    .main .home .line {
+        right: 7rem;
+    }
+    .main .home .text1 {
+        font-size: 0.7826rem;
+        right: 2.8rem;
+    }
+    .main .home .text2 {
+        margin-top: 0;
+        font-size: 0.6957rem;
+        right: 15rem;
+    }
+    .main .home .cityImg {
+        right: 8rem;
+    }
+    .history .container>div>p {
+        max-width: 100%;
+    }
+    .history .container .map {
+        width: 13.0435rem;
+        height: 13.0435rem;
+    }
+    .introduction .container {
+        padding-top: 3.0435rem;
+        justify-content: center;
+    }
+    .introduction .container .pcTitle {
+        display: none;
+    }
+    .introduction .container .mbTitle {
+        display: block;
+        font-size: 1.75rem;
+        letter-spacing: 0.1875rem;
+        font-weight: 600;
+        text-align: center;
+    }
+    .introduction .container .mbTitle>hr {
+        margin: 0.5625rem auto 0.1563rem auto;
+        border: 2px solid black;
+        width: 7.1875rem;
+    }
+    .introduction .container .mbTitle>span {
+        letter-spacing: 0;
+    }
+    .introduction .container .text {
+        display: none;
+    }
+    .introduction .slides .swiper {
+        max-width: 100vw;
+    }
+    .introduction .secition2 {
+        margin-top: 17.3913rem;
+    }
+    .tourism .mapGrounp .map {
+        width: 100vw;
+    }
+    .tourService .container .bigBox {
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .tourService .container .bigBox .box {
+        margin: 1.3043rem 0 0 0;
+    }
+    .footer .container {
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+/* 圖片區 */
+
+.line3pic1 {
+    background: url("img/Group116.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line3pic2 {
+    background: url("img/Group118.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line3pic3 {
+    background: url("img/Group120.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line3pic4 {
+    background: url("img/Group124.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line3pic5 {
+    background: url("img/Group126.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line3pic6 {
+    background: url("img/Group132.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line3pic7 {
+    background: url("img/Group116.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line3pic8 {
+    background: url("img/Group118.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line3pic9 {
+    background: url("img/Group120.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line3pic10 {
+    background: url("img/Group124.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line3pic11 {
+    background: url("img/Group126.png") no-repeat center center;
+    background-size: cover;
+}
+
+/* 第二行 */
+
+.line2pic1 {
+    background: url("img/Group134.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line2pic2 {
+    background: url("img/Group138.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line2pic3 {
+    background: url("img/Group140.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line2pic4 {
+    background: url("img/Group142.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line2pic5 {
+    background: url("img/Group145.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line2pic6 {
+    background: url("img/Group148.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line2pic7 {
+    background: url("img/Group134.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line2pic8 {
+    background: url("img/Group138.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line2pic9 {
+    background: url("img/Group140.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line2pic10 {
+    background: url("img/Group142.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line2pic11 {
+    background: url("img/Group145.png") no-repeat center center;
+    background-size: cover;
+}
+
+/* 第一行 */
+
+.line1pic1 {
+    background: url("img/Group150.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line1pic2 {
+    background: url("img/Group152.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line1pic3 {
+    background: url("img/Group154.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line1pic4 {
+    background: url("img/Group157.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line1pic5 {
+    background: url("img/Group148.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line1pic6 {
+    background: url("img/Group150.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line1pic7 {
+    background: url("img/Group152.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line1pic8 {
+    background: url("img/Group154.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line1pic9 {
+    background: url("img/Group157.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line1pic10 {
+    background: url("img/Group124.png") no-repeat center center;
+    background-size: cover;
+}
+
+.line1pic11 {
+    background: url("img/Group120.png") no-repeat center center;
+    background-size: cover;
+}
+
+/* 歷史介紹 */
+
+.history2 #history-inner .slides #scroll-swiper1 div {
+    background: url("img/Group91.png") no-repeat center center;
+    background-size: cover;
+}
+
+.history2 #history-inner .slides #scroll-swiper2 div {
+    background: url("img/p026a.jpg") no-repeat center center;
+    background-size: cover;
+    background-position: center;
+}
+
+.history2 #history-inner .slides #scroll-swiper3 div {
+    background: url("img/Group85.png") no-repeat center center;
+    background-size: cover;
+}
+
+.history2 #history-inner .slides #scroll-swiper4 .img1 {
+    background: url("img/Group87.png") no-repeat center center;
+    background-size: cover;
+}
+
+.history2 #history-inner .slides #scroll-swiper4 .img2 {
+    background: url("img/Group89.png") no-repeat center center;
+    background-size: cover;
+}
+
+.history2 #history-inner .slides #scroll-swiper4 .img3 {
+    background: url("img/Group2109.png") no-repeat center center;
+    background-size: cover;
+}
+
+.history2 #history-inner .slides #scroll-swiper6 .img1 {
+    background: url("img/Group96.png") no-repeat center center;
+    background-size: cover;
+}
+
+.history2 #history-inner .slides #scroll-swiper6 .img2 {
+    background: url("img/Rectangle114.png") no-repeat center center;
+    background-size: cover;
+}
+
+.history2 #history-inner .slides #scroll-swiper7 div {
+    background: url("img/Rectangle112.png") no-repeat center center;
+    background-size: cover;
+}
+
+.history2 #history-inner .slides #scroll-swiper8 .img {
+    background: url("img/Rectangle113.png") no-repeat center center;
+    background-size: cover;
+}
+
+/* 推薦路線 */
+
+.map1pic1 {
+    background: url("img/05/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map1pic2 {
+    background: url("img/08/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map1pic3 {
+    background: url("img/12/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map1pic4 {
+    background: url("img/09/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map1pic5 {
+    background: url("img/03/02.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map1pic6 {
+    background: url("img/10/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+/* 深度旅行 */
+
+.map2pic1 {
+    background: url("img/05/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map2pic2 {
+    background: url("img/08/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map2pic3 {
+    background: url("img/12/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map2pic4 {
+    background: url("img/09/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map2pic5 {
+    background: url("img/03/02.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map2pic6 {
+    background: url("img/10/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map2pic7 {
+    background: url("img/10/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+/* 美軍大兵 */
+
+.map3pic1 {
+    background: url("img/05/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map3pic2 {
+    background: url("img/08/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map3pic3 {
+    background: url("img/12/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map3pic4 {
+    background: url("img/09/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map3pic5 {
+    background: url("img/03/02.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map3pic6 {
+    background: url("img/10/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map3pic7 {
+    background: url("img/12/02.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map3pic8 {
+    background: url("img/06/ca02f08a07b73c7c8ea49328e78955353_22310450_190117_0004.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map3pic9 {
+    background: url("img/04/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map3pic10 {
+    background: url("img/07/lan.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+/* 千越大樓 */
+
+.map4pic1 {
+    background: url("img/05/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map4pic2 {
+    background: url("img/08/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map4pic3 {
+    background: url("img/12/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map4pic4 {
+    background: url("img/09/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map4pic5 {
+    background: url("img/03/02.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map4pic6 {
+    background: url("img/10/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+/* 人生交易所 */
+
+.map5pic1 {
+    background: url("img/05/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map5pic2 {
+    background: url("img/08/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map5pic3 {
+    background: url("img/12/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map5pic4 {
+    background: url("img/09/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map5pic5 {
+    background: url("img/03/02.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map5pic6 {
+    background: url("img/10/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+/* 時光印記 */
+
+.map6pic1 {
+    background: url("img/05/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map6pic2 {
+    background: url("img/08/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map6pic3 {
+    background: url("img/12/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map6pic4 {
+    background: url("img/09/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map6pic5 {
+    background: url("img/03/02.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.map6pic6 {
+    background: url("img/10/01.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+/* 圖片區到此 */

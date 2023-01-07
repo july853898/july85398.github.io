@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #000;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bigbox{
+            width: 100px;
+            height: 250px;
+            background-color: bisque;
+            overflow: hidden;
+            position: relative;
+        }
+        .box-move{
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            display: flex;
+            flex-flow: column;
+        }
+        .xmall-box{
+            width: 100%;
+            height: 50px;
+            color: #000;
+            font-size: 2rem;
+            text-align: center;
+            line-height: 50px;
+        }
+        .xmall-box:hover{
+            background-color: hotpink;
+        }
+        .A{
+            top: -300px;
+        }
+        .B{
+            top: -250px;
+        }
+        .C{
+            top: -200px;
+        }
+        .D{
+            top: -150px;
+        }
+        .E{
+            top: -100px;
+        }
+        .F{
+            top: -50px;
+        }
+        .G{
+            top: 0px;
+        }
+        .H{
+            top: -350px;
+        }
+        .I{
+            top: -400px;
+        }
+        .J{
+            top: -450px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bigbox">
+        <div class="box-move" style="transition: top 0.5s;">
+            <div class="group A order1">
+                <div class="xmall-box" data-move="1">1</div>
+                <div class="xmall-box" data-move="2">2</div>
+                <div class="xmall-box" data-move="3">3</div>
+                <div class="xmall-box" data-move="4">4</div>
+                <div class="xmall-box" data-move="5">5</div>
+            </div>
+            <div class="group B ">
+                <div class="xmall-box" data-move="6">1</div>
+                <div class="xmall-box" data-move="7">2</div>
+                <div class="xmall-box" data-move="8">3</div>
+                <div class="xmall-box" data-move="9">4</div>
+                <div class="xmall-box" data-move="10">5</div>
+            </div>
+            <div class="group C">
+                <div class="xmall-box" data-move="1">1</div>
+                <div class="xmall-box" data-move="2">2</div>
+                <div class="xmall-box" data-move="3">3</div>
+                <div class="xmall-box" data-move="4">4</div>
+                <div class="xmall-box" data-move="5">5</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dot =document.querySelectorAll('.xmall-box');
+        const box_move =document.querySelector('.box-move');
+        const boxgroupA =box_move.querySelector('.group.A');
+        const boxgroupB =box_move.querySelector('.group.B');
+        const boxgroupC =box_move.querySelector('.group.C');
+
+        function clearmove(){
+            box_move.classList.remove('A')
+            box_move.classList.remove('B')
+            box_move.classList.remove('C')
+            box_move.classList.remove('D')
+            box_move.classList.remove('E')
+            box_move.classList.remove('F')
+            box_move.classList.remove('G')
+            box_move.classList.remove('H')
+            box_move.classList.remove('I')
+            box_move.classList.remove('J')
+            box_move.classList.remove('K')
+        }
+        function clearorder(n , m) {
+            box_move.classList.add(n)
+            setTimeout(()=>{
+                box_move.style.transition = "top 0s";
+                clearmove()
+                box_move.classList.add(m)
+                setTimeout(()=>{
+                    box_move.style.transition = "top 0.5s";
+                },10)
+            },500)
+        }
+        
+        console.log(dot);
+        dot.forEach((target) => {
+            target.addEventListener('click',(event,target) =>{
+                console.log(event.target.dataset.move);
+                console.log(box_move.style.transition);
+                let qqq = event.target.dataset.move
+                if (qqq == 1) {
+                    clearmove()
+                    box_move.classList.add('G')
+                }else if (qqq == 2) {
+                    clearmove()
+                    box_move.classList.add('F')
+                }else if (qqq == 3) {
+                    clearmove()
+                    box_move.classList.add('E')
+                }else if (qqq == 4) {
+                    clearmove()
+                    box_move.classList.add('D')
+                }else if (qqq == 5) {
+                    clearmove()
+                    box_move.classList.add('C')
+                }else if (qqq == 6) {
+                    clearmove()
+                    clearorder('B','G')
+                }else if (qqq == 7) {
+                    clearmove()
+                    clearorder('A','F')
+                }else if (qqq == 8) {
+                    clearmove()
+                    clearorder('H','E')
+                }else if (qqq == 9) {
+                    clearmove()
+                    clearorder('I','D')
+                }else if (qqq == 10) {
+                    clearmove()
+                    clearorder('J','C')
+                }
+            })
+        });
+    </script>
+</body>
+</html>

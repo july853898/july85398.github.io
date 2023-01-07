@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天氣小卡</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            background-color: rgb(216, 245, 179);
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+        }
+        .container .board{
+            width: 100%;
+            height:  100vh;
+            background-color: rgb(224, 222, 106);
+        }
+        .main{
+            padding: 10px;
+
+        }
+        .tabs{
+            padding-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .tab{
+            cursor: pointer;
+            text-align: center;
+            width: 200px;
+            margin: 5px;
+            background-color: rgba(123, 185, 196, 0.336);
+            border-radius: 80px;
+            font-size: 20px;
+            font-weight: 900;
+            padding: 3px 4px;   
+
+        }
+        .active{
+            background-color: rgb(95, 247, 89);
+        }
+        .none{
+            background-color: transparent;
+        }
+        .card-box {
+            width: 165px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+        }
+        .contents{
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 15px;
+            gap: 5px;
+        }
+        .text-card {
+            width: 150px;
+            background-color: rgb(149, 224, 105);
+            font-weight: bold;
+            font-size: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid pink ;
+            gap: 5px;
+        }
+        .contents img {
+            border: 10px solid pink ;
+            width: 150px;
+            height: 150px;
+            /* 撐大圖片 */
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="board">
+            <div class="main">
+                <div class="tabs">
+                    <div class="tab">北部</div>
+                    <div class="tab">中部</div>
+                    <div class="tab">南部</div>
+                    <div class="tab">東部</div>
+                    <div class="tab">離島</div>
+                    <div class="tab">全部</div>
+                </div>              
+                    <div class="contents">
+                        <div class="card-box">
+                            <img src="./img/clodyday.png" alt="">
+                            <div class="text-card">
+                                <div class="title">台北市</div>
+                                <div class="text">晴時多雲偶陣雨</div>
+                            <div class="temperature">28</div>
+                        </div>
+                        </div>
+                    </div>
+                
+                    
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+        const tabs = document.querySelectorAll('.tab');
+        const content = document.querySelector('.contents');
+
+        
+
+        fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=rdec-key-123-45678-011121314').then(function(response){
+            return response.json();
+            // 給裡面的資料一個參數
+        }).then(function(datas,index){
+            
+            // 縣市名稱
+            // console.log(datas.records.location);
+            // 天氣狀態
+            // console.log(datas.records.location[0].weatherElement[0].time[0].parameter.parameterName);
+            // 溫度
+            // console.log(datas.records.location[0].weatherElement[4].time[0].parameter.parameterName);
+
+            // 針對所有的按鈕做迴圈
+            tabs.forEach(function(btn){
+                
+                // 一開始不顯示天氣小卡
+                content.innerHTML = '';
+                
+                // 觸發按鈕點擊事件
+
+                btn.addEventListener('click',function(data,btnindex){
+
+                    tabs.forEach(function(btn){
+                        btn.classList.remove('active')
+                    });
+                    btn.classList.add('active')
+
+                    // 每次點擊按鈕第一件事先做清空處理
+                    content.innerHTML = '';
+
+                    let section = data.target.innerHTML
+                    let location = datas.records.location
+
+                    
+                    // 針對22個縣市區域做迴圈，每點擊一次btn，就會觸發22個區域回報
+                    location.forEach(function(data,index){
+                        
+
+                        // 縣市名稱
+                        let locationName = datas.records.location[index].locationName
+                        // 天氣狀態
+                        let weaTher = datas.records.location[index].weatherElement[0].time[0].parameter.parameterName
+                        // 溫度
+                        let parameter = datas.records.location[index].weatherElement[4].time[0].parameter.parameterName
+                        // 天氣值
+                        let weather_conditions = datas.records.location[index].weatherElement[0].time[0].parameter.     parameterValue
+                        
+                       
+                        // 設一個function 減少代碼數量
+                        let cardOut = function(){
+
+                            // 設定img帶入圖案
+                            let img;
+                            if (weather_conditions < 5){
+                                img = './img/sun.jfif'
+                            }else if (weather_conditions >= 5 && weather_conditions < 9){
+                                img = './img/clodyday.png';
+                            }else if (weather_conditions >= 9 && weather_conditions < 24){
+                                img = './img/rain.jpg';
+                            }
+
+                            content.innerHTML += `
+                                <div class="card-box">
+                                    <img src="${img}" alt="">
+                                    <div class="text-card">
+                                        <div class="title">${locationName}</div>
+                                        <div class="text">${weaTher}</div>
+                                        <div class="temperature">${parameter}°C</div>
+                                    </div>
+                                </div>`
+                        }
+                        
+                        if (section === '北部'){
+                            if(locationName === '新北市' 
+                            || locationName === '臺北市' 
+                            || locationName === '新北市' 
+                            || locationName === '桃園市' 
+                            || locationName === '新竹縣'
+                            || locationName === '新竹市'
+                            || locationName === '宜蘭縣'
+                            || locationName === '基隆市') 
+                            cardOut();
+                        }else if (section === '中部'){
+                            if(locationName === '苗栗縣'
+                            || locationName === '雲林縣'
+                            || locationName === '台中市'
+                            || locationName === '南投縣'
+                            || locationName === '彰化縣')
+                            cardOut();
+                        }else if (section === '南部'){
+                            if(locationName === '嘉義縣'
+                            || locationName === '嘉義市'
+                            || locationName === '臺南市'
+                            || locationName === '高雄市'
+                            || locationName === '屏東縣')
+                            cardOut();
+                        }else if (section === '東部'){
+                            if(locationName === '花蓮縣'
+                            || locationName === '臺東縣')
+                            cardOut();
+                        }     
+                        else if (section === '離島'){
+                            if(locationName === '金門縣'
+                            || locationName === '澎湖縣'
+                            || locationName === '連江縣')
+                            cardOut();
+                        }else if (section === '全部'){
+                            cardOut();
+                        }
+
+                    });
+                })
+            })
+            
+        });
+    </script>
+    
+</body>
+</html>
+
+
+                
+
+

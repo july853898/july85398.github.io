@@ -1,0 +1,51 @@
+.weather-card {
+  padding: 0 75px;
+}
+.weather-card .mySwipers-weather {
+  width: 100%;
+  height: 180px;
+}
+.weather-card .mySwipers-weather .swiper-wrapper .swiper-slide {
+  width: 180px;
+  height: 180px;
+  background: rgba(65, 65, 65, 0.6);
+  border-radius: 10px;
+}
+.weather-card .mySwipers-weather .swiper-wrapper .swiper-slide .text-word {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.weather-card .mySwipers-weather .swiper-wrapper .swiper-slide .text-word h4 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+@media (max-width: 400px) {
+  .weather-card .mySwipers-weather .swiper-wrapper .swiper-slide .text-word h4 {
+    font-size: 15px;
+    margin: 5px;
+  }
+}
+.weather-card .mySwipers-weather .swiper-wrapper .swiper-slide .text-word .weather-infomation {
+  display: flex;
+  align-items: center;
+}
+.weather-card .mySwipers-weather .swiper-wrapper .swiper-slide .text-word .weather-infomation .weather-image {
+  width: 50px;
+  height: 50px;
+}
+.weather-card .mySwipers-weather .swiper-wrapper .swiper-slide .text-word .weather-infomation .weather-image img {
+  width: 50px;
+  height: 50px;
+}
+@media (max-width: 400px) {
+  .weather-card .mySwipers-weather .swiper-wrapper .swiper-slide {
+    width: 120px;
+    height: 120px;
+  }
+}
+@media (max-width: 400px) {
+  .weather-card {
+    padding: 0 10px;
+  }
+}/*# sourceMappingURL=weather.css.map */
