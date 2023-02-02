@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.header {
+    border-bottom:1px solid gray;
+    .container {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        .logo {
+            padding-left: 50px;
+        }
+        .sign-log {
+            padding-top: 30px;
+            gap: 10px;
+            a {
+                padding: 5px;
+                text-decoration: none;
+                background-color: #FFA400;
+                border: 1px solid black;
+                color: black;
+                white-space: nowrap;
+                font-family: 'Montserrat', sans-serif;
+            }
+        }
+    }
+}
+nav {
+    .nav {
+        font-family: 'Montserrat', sans-serif;
+        a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            letter-spacing: 3px;
+            white-space: nowrap;
+        }
+    }
+}
+main {
+    .introduce-sec {
+
+        img {
+            width: 100%;
+        }
+        .container {
+            .text-sec {
+                .title {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 63px;
+                    font-weight: 800;
+                }
+                .sec-title {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 63px;
+                    font-weight: 800;
+                }
+                .third-title {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 30px;
+                }
+                .text {
+                    font-size: 16px;
+                }
+                .button {
+                    background-color: #FFA400;
+                    border-radius: 50px;
+                    a {
+                        display: block;
+                        font-size: 16px;
+                        color: black;
+                        text-decoration: none;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+    .banner {
+        height: 500px;
+        img {
+            height: 500px;
+        }
+    }
+    .gallery-map {
+        background-color: #020626;
+        .container {
+            background-color: #020626;
+            .text-sec {
+                .row {
+                    font-family: 'Montserrat', sans-serif;
+                    .title,.sec-title {
+                        font-size: 32px;
+                    }
+                    text {
+                        font-size: 16px;
+                    }
+                    
+                }
+            }
+            .gallery {
+                gap: 5px;
+                .top-card, .down-card,.mid-in-card,.mid-card  {
+                    gap: 5px;
+                }
+                .card {
+                    background-color: white;
+                    border-radius: 10px;
+                    width: 150px;
+                    height: 150px;
+                }
+                .card-bg {
+                    background-color: white;
+                    border-radius: 10px;
+                    width: 300px;
+                    height: 300px;
+                }
+            }
+        }
+        
+    }
+    .bounsContainer {
+        background-color: #020626;
+        .container {
+            .title {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            .card-sec {
+                gap: 5px;
+                .card {
+                    width: 100px;
+                    height: 350px;
+                    border-radius: 10px;
+                    background-color: #262a5e;
+                }
+            }
+        }
+    }
+    .moreContainer {
+        background-color: #020626;
+        .container {
+            .title {
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            .card-sec {
+                width: 100%;
+                gap: 5px;
+            }
+        }
+    }
+    .bestContainer {
+        background-color: #020626;
+        .img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background-color: #FFA400;
+            top: -50px;
+        }
+    }
+    .frequentlyContainer {
+        background-color: #020626;
+        .container {
+            .container {
+                .img {
+                    img {
+                        width: 600px;
+                    }
+                }
+            }
+        }
+    }
+}

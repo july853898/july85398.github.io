@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  border-bottom: 1px solid gray;
+}
+.header .container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.header .container .logo {
+  padding-left: 50px;
+}
+.header .container .sign-log {
+  padding-top: 30px;
+  gap: 10px;
+}
+.header .container .sign-log a {
+  padding: 5px;
+  text-decoration: none;
+  background-color: #FFA400;
+  border: 1px solid black;
+  color: black;
+  white-space: nowrap;
+  font-family: "Montserrat", sans-serif;
+}
+
+nav .nav {
+  font-family: "Montserrat", sans-serif;
+}
+nav .nav a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+
+main .introduce-sec img {
+  width: 100%;
+}
+main .introduce-sec .container .text-sec .title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 63px;
+  font-weight: 800;
+}
+main .introduce-sec .container .text-sec .sec-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 63px;
+  font-weight: 800;
+}
+main .introduce-sec .container .text-sec .third-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+}
+main .introduce-sec .container .text-sec .text {
+  font-size: 16px;
+}
+main .introduce-sec .container .text-sec .button {
+  background-color: #FFA400;
+  border-radius: 50px;
+}
+main .introduce-sec .container .text-sec .button a {
+  display: block;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+  white-space: nowrap;
+}
+main .banner {
+  height: 500px;
+}
+main .banner img {
+  height: 500px;
+}
+main .gallery-map {
+  background-color: #020626;
+}
+main .gallery-map .container {
+  background-color: #020626;
+}
+main .gallery-map .container .text-sec .row {
+  font-family: "Montserrat", sans-serif;
+}
+main .gallery-map .container .text-sec .row .title, main .gallery-map .container .text-sec .row .sec-title {
+  font-size: 32px;
+}
+main .gallery-map .container .text-sec .row text {
+  font-size: 16px;
+}
+main .gallery-map .container .gallery {
+  gap: 5px;
+}
+main .gallery-map .container .gallery .top-card, main .gallery-map .container .gallery .down-card, main .gallery-map .container .gallery .mid-in-card, main .gallery-map .container .gallery .mid-card {
+  gap: 5px;
+}
+main .gallery-map .container .gallery .card {
+  background-color: white;
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+}
+main .gallery-map .container .gallery .card-bg {
+  background-color: white;
+  border-radius: 10px;
+  width: 300px;
+  height: 300px;
+}
+main .bounsContainer {
+  background-color: #020626;
+}
+main .bounsContainer .container .title {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+main .bounsContainer .container .card-sec {
+  gap: 5px;
+}
+main .bounsContainer .container .card-sec .card {
+  width: 100px;
+  height: 350px;
+  border-radius: 10px;
+  background-color: #262a5e;
+}
+main .moreContainer {
+  background-color: #020626;
+}
+main .moreContainer .container .title {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+main .moreContainer .container .card-sec {
+  width: 100%;
+  gap: 5px;
+}
+main .bestContainer {
+  background-color: #020626;
+}
+main .bestContainer .img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: #FFA400;
+  top: -50px;
+}
+main .frequentlyContainer {
+  background-color: #020626;
+}
+main .frequentlyContainer .container .container .img img {
+  width: 600px;
+}/*# sourceMappingURL=index.css.map */
