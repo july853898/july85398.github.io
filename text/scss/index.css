@@ -1,7 +1,9 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Montserrat", sans-serif;
 }
 
 .header {
@@ -25,12 +27,8 @@
   border: 1px solid black;
   color: black;
   white-space: nowrap;
-  font-family: "Montserrat", sans-serif;
 }
 
-nav .nav {
-  font-family: "Montserrat", sans-serif;
-}
 nav .nav a {
   display: block;
   text-decoration: none;
@@ -38,22 +36,36 @@ nav .nav a {
   letter-spacing: 3px;
   white-space: nowrap;
 }
+nav .top-block {
+  position: fixed;
+  top: 0%;
+  z-index: 2;
+}
+nav .progress-block {
+  position: fixed;
+  top: 0px;
+  z-index: 4;
+  background-color: skyblue;
+}
 
+main .introduce-sec {
+  height: 85vh;
+  background-image: url("../img/首頁圖片.webp");
+  background-position: 50% 80%;
+  background-repeat: no-repeat;
+}
 main .introduce-sec img {
   width: 100%;
 }
 main .introduce-sec .container .text-sec .title {
-  font-family: "Montserrat", sans-serif;
   font-size: 63px;
   font-weight: 800;
 }
 main .introduce-sec .container .text-sec .sec-title {
-  font-family: "Montserrat", sans-serif;
   font-size: 63px;
   font-weight: 800;
 }
 main .introduce-sec .container .text-sec .third-title {
-  font-family: "Montserrat", sans-serif;
   font-size: 30px;
 }
 main .introduce-sec .container .text-sec .text {
@@ -82,11 +94,9 @@ main .gallery-map {
 main .gallery-map .container {
   background-color: #020626;
 }
-main .gallery-map .container .text-sec .row {
-  font-family: "Montserrat", sans-serif;
-}
 main .gallery-map .container .text-sec .row .title, main .gallery-map .container .text-sec .row .sec-title {
   font-size: 32px;
+  font-weight: 500;
 }
 main .gallery-map .container .text-sec .row text {
   font-size: 16px;
@@ -149,6 +159,62 @@ main .bestContainer .img {
 main .frequentlyContainer {
   background-color: #020626;
 }
+main .frequentlyContainer .container .container .text-sec .question .title {
+  background-color: #FFA400;
+  border-radius: 10px;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: bold;
+}
+main .frequentlyContainer .container .container .text-sec .question .text {
+  font-size: 14px;
+  max-height: 0px;
+  overflow: hidden;
+}
+main .frequentlyContainer .container .container .text-sec .question .block {
+  max-height: 100%;
+  transition: 0.5s;
+}
+main .frequentlyContainer .container .container .text-sec .question .icon {
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  transform: rotate(223deg);
+  transition: 0.5s;
+}
+main .frequentlyContainer .container .container .text-sec .question .deg {
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
 main .frequentlyContainer .container .container .img img {
-  width: 600px;
+  width: 100%;
+}
+
+footer .foot {
+  background-image: url("../img/789-07.png");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+footer .foot .footContainer .container {
+  border-bottom: 1px solid white;
+}
+footer .foot .footContainer .container .logo-sec .logo img {
+  width: 300px;
+}
+footer .foot .footContainer .container .link-sec ul .title {
+  border-bottom: 1px solid white;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+footer .foot .footContainer .container .link-sec ul li {
+  padding: 5px 0px;
+  font-size: 18px;
+  list-style-type: none;
+  font-weight: 100;
+}
+footer .foot .footContainer .container .link-sec ul li a {
+  text-decoration: none;
+  color: white;
 }/*# sourceMappingURL=index.css.map */
